@@ -101,17 +101,14 @@
 
 
 
-  <meta name="description" content="线性判别分析是监督学习算法，他与主成分分析法的不同之处在于，它主要用于处理提供了类别标签的数据。主成分分析法的缺陷是无监督学习会导致原本线性可分的数据投影到低维空间之后，不同数据类型混杂在一起，变为数据不可分的数据集。而线性判别分析法通过将类间散度最大化，同时最小化类内散度，将映射后的数据依然保留良好的分离度。本节我们介绍根据类间散度矩阵和类内散度矩阵实现维度缩减的方法 ——线性判别分析（Line">
-<meta property="og:type" content="article">
-<meta property="og:title" content="线性判别分析 LDA">
-<meta property="og:url" content="http://yoursite.com/2019/06/22/线性判别分析/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="books">
+<meta property="og:url" content="http://yoursite.com/books/index.html">
 <meta property="og:site_name" content="Toby的羽绒被窝">
-<meta property="og:description" content="线性判别分析是监督学习算法，他与主成分分析法的不同之处在于，它主要用于处理提供了类别标签的数据。主成分分析法的缺陷是无监督学习会导致原本线性可分的数据投影到低维空间之后，不同数据类型混杂在一起，变为数据不可分的数据集。而线性判别分析法通过将类间散度最大化，同时最小化类内散度，将映射后的数据依然保留良好的分离度。本节我们介绍根据类间散度矩阵和类内散度矩阵实现维度缩减的方法 ——线性判别分析（Line">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-27T16:47:08.041Z">
+<meta property="og:updated_time" content="2019-06-29T11:12:29.850Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线性判别分析 LDA">
-<meta name="twitter:description" content="线性判别分析是监督学习算法，他与主成分分析法的不同之处在于，它主要用于处理提供了类别标签的数据。主成分分析法的缺陷是无监督学习会导致原本线性可分的数据投影到低维空间之后，不同数据类型混杂在一起，变为数据不可分的数据集。而线性判别分析法通过将类间散度最大化，同时最小化类内散度，将映射后的数据依然保留良好的分离度。本节我们介绍根据类间散度矩阵和类内散度矩阵实现维度缩减的方法 ——线性判别分析（Line">
+<meta name="twitter:title" content="books">
 
 
 
@@ -119,7 +116,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/06/22/线性判别分析/">
+  <link rel="canonical" href="http://yoursite.com/books/">
 
 
 
@@ -129,7 +126,7 @@
   };
 </script>
 
-  <title>线性判别分析 LDA | Toby的羽绒被窝</title>
+  <title>books | Toby的羽绒被窝</title>
   
 
 
@@ -267,7 +264,7 @@
         
         
           
-          <li class="menu-item menu-item-books">
+          <li class="menu-item menu-item-books menu-item-active">
 
     
     
@@ -308,211 +305,70 @@
           
             
 
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/22/线性判别分析/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yutong Sun">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Toby的羽绒被窝">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">线性判别分析 LDA
+<h1 class="post-title" itemprop="name headline">books
 
-              
-            
-          </h1>
-        
+</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
+<div class="post-meta">
+  
+  
 
-            
-            
-            
 
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
 
-              
-                
-              
+</div>
 
-              <time title="Created: 2019-06-22 18:20:19" itemprop="dateCreated datePublished" datetime="2019-06-22T18:20:19+01:00">2019-06-22</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-06-27 17:47:08" itemprop="dateModified" datetime="2019-06-27T17:47:08+01:00">2019-06-27</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/降维/" itemprop="url" rel="index"><span itemprop="name">降维</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             Views:  
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <p>线性判别分析是监督学习算法，他与主成分分析法的不同之处在于，它主要用于处理提供了类别标签的数据。主成分分析法的缺陷是无监督学习会导致原本线性可分的数据投影到低维空间之后，不同数据类型混杂在一起，变为数据不可分的数据集。而线性判别分析法通过将类间散度最大化，同时最小化类内散度，将映射后的数据依然保留良好的分离度。本节我们介绍根据类间散度矩阵和类内散度矩阵实现维度缩减的方法 ——线性判别分析（Linear Discriminant Analysis, LDA）</p>
-<p>因为线性判别分析处理的是有分类数据，所以它在降维的过程中要尽量将不同类型的数据在映射后的低维空间依然能展现出良好的分离度。所以我们优化的目标就是让类与类之间的距离尽可能大，让同类数据之间的距离尽可能小。我们首先定义类间散度矩阵，它的大小显示出不同类别之间的距离。但由于对于2分类的数据与多分类的数据类内散度矩阵和类间散度矩阵的表示方式是不同的，所以我们分别对其进行定义。</p>
-<a id="more"></a>
-<p>二分类数据：$S_b = (\mu_0 - \mu_1)(\mu_0 - \mu_1)^T$</p>
-<p>多分类数据：$S_b = \sum ^C _{i=1} N_i(\mu_i-\mu)(\mu_i-\mu)^T$ 其中 $\mu$ 为所有类的均值 $\mu =\frac{1}{N} \sum x$</p>
-<p>对于类内散度矩阵我们定义：</p>
-<p>二分类数据：$S_w = \sum^2_{i=1}\sum_{x\in W_i}(x-\mu_i)(x-\mu_i)^T$ 其中$\mu_i = \frac{1}{N_i} \sum_{x\in W_i}x$</p>
-<p>多分类数据：$S_w = \sum^C_{i=1}\sum_{x\in W_i}(x - \mu_i)(x - \mu_i)^T$</p>
-<p>为了将不同类型的数据在映射之后的维度空间尽可能分隔开，我们只需要将 $S_b$ 尽可能大，$S_w$ 尽可能小即可。所以优化函数可以定义为：</p>
-<p>​                                                    $J = \frac{W^TS_bW}{W^TS_wW}$  (W为映射矩阵)</p>
-<p>通过对J求导可以得到，对于二分类数据 $S^{-1}_W(\mu_0-\mu_1)$时，J可以取到最大值。对于多分类数据，W映射矩阵由C-1个向量组成，其中第k个向量是$S^{-1}_WS_b$的第k个特征向量。所以在多分类问题中，线性判别分析的一个缺陷是它只能将高维数据降到C-1维或者更低维度。其中C为原始数据的类型数量。</p>
-<p>最后使用得到的映射矩阵，可以将原始数据映射到低维空间，并保证了低维空间中的数据依然保留了原始数据的最大分离度。</p>
-
+      <div class="post-body">
+        
+        
+          
+        
+      </div>
+      
+      
       
     </div>
-
     
 
+
+
     
     
     
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/06/22/主成分分析法PCA/" rel="next" title="主成分分析法PCA">
-                <i class="fa fa-chevron-left"></i> 主成分分析法PCA
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
   </div>
 
 
@@ -862,46 +718,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 
