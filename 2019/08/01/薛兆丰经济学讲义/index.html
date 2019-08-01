@@ -101,17 +101,17 @@
 
 
 
-  <meta name="description" content="线性判别分析是监督学习算法，他与主成分分析法的不同之处在于，它主要用于处理提供了类别标签的数据。主成分分析法的缺陷是无监督学习会导致原本线性可分的数据投影到低维空间之后，不同数据类型混杂在一起，变为数据不可分的数据集。而线性判别分析法通过将类间散度最大化，同时最小化类内散度，将映射后的数据依然保留良好的分离度。本节我们介绍根据类间散度矩阵和类内散度矩阵实现维度缩减的方法 ——线性判别分析（Line">
+  <meta name="description" content="薛兆丰经济学讲义马粪争端案在生活中，很多人讨论什么才是公正的，但背后其实很可能是在对效率做出考量。 人们谈到公平与效率时，总会说要么是公平优先，要么是效率优先，二者此消彼长、互相对立。事实上，一点儿马粪，判给谁不重要，重要的是案件对于后代产生的影响。鼓励人们创造财富，社会才会越来越好。 公正背后是效率的考量。 尊重别人的财富，不能见猎心起、顺手牵羊，这是一种朴实的公正观，每位负责任的家长都会向子女">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性判别分析 LDA">
-<meta property="og:url" content="https://webstertong.xyz/2019/06/22/线性判别分析/index.html">
+<meta property="og:title" content="薛兆丰经济学讲义 - 读书笔记">
+<meta property="og:url" content="https://webstertong.xyz/2019/08/01/薛兆丰经济学讲义/index.html">
 <meta property="og:site_name" content="Toby的羽绒被窝">
-<meta property="og:description" content="线性判别分析是监督学习算法，他与主成分分析法的不同之处在于，它主要用于处理提供了类别标签的数据。主成分分析法的缺陷是无监督学习会导致原本线性可分的数据投影到低维空间之后，不同数据类型混杂在一起，变为数据不可分的数据集。而线性判别分析法通过将类间散度最大化，同时最小化类内散度，将映射后的数据依然保留良好的分离度。本节我们介绍根据类间散度矩阵和类内散度矩阵实现维度缩减的方法 ——线性判别分析（Line">
+<meta property="og:description" content="薛兆丰经济学讲义马粪争端案在生活中，很多人讨论什么才是公正的，但背后其实很可能是在对效率做出考量。 人们谈到公平与效率时，总会说要么是公平优先，要么是效率优先，二者此消彼长、互相对立。事实上，一点儿马粪，判给谁不重要，重要的是案件对于后代产生的影响。鼓励人们创造财富，社会才会越来越好。 公正背后是效率的考量。 尊重别人的财富，不能见猎心起、顺手牵羊，这是一种朴实的公正观，每位负责任的家长都会向子女">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-27T16:47:08.041Z">
+<meta property="og:updated_time" content="2019-08-01T21:03:19.745Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线性判别分析 LDA">
-<meta name="twitter:description" content="线性判别分析是监督学习算法，他与主成分分析法的不同之处在于，它主要用于处理提供了类别标签的数据。主成分分析法的缺陷是无监督学习会导致原本线性可分的数据投影到低维空间之后，不同数据类型混杂在一起，变为数据不可分的数据集。而线性判别分析法通过将类间散度最大化，同时最小化类内散度，将映射后的数据依然保留良好的分离度。本节我们介绍根据类间散度矩阵和类内散度矩阵实现维度缩减的方法 ——线性判别分析（Line">
+<meta name="twitter:title" content="薛兆丰经济学讲义 - 读书笔记">
+<meta name="twitter:description" content="薛兆丰经济学讲义马粪争端案在生活中，很多人讨论什么才是公正的，但背后其实很可能是在对效率做出考量。 人们谈到公平与效率时，总会说要么是公平优先，要么是效率优先，二者此消彼长、互相对立。事实上，一点儿马粪，判给谁不重要，重要的是案件对于后代产生的影响。鼓励人们创造财富，社会才会越来越好。 公正背后是效率的考量。 尊重别人的财富，不能见猎心起、顺手牵羊，这是一种朴实的公正观，每位负责任的家长都会向子女">
 
 
 
@@ -119,7 +119,7 @@
 
   
   
-  <link rel="canonical" href="https://webstertong.xyz/2019/06/22/线性判别分析/">
+  <link rel="canonical" href="https://webstertong.xyz/2019/08/01/薛兆丰经济学讲义/">
 
 
 
@@ -129,7 +129,7 @@
   };
 </script>
 
-  <title>线性判别分析 LDA | Toby的羽绒被窝</title>
+  <title>薛兆丰经济学讲义 - 读书笔记 | Toby的羽绒被窝</title>
   
 
 
@@ -328,7 +328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://webstertong.xyz/2019/06/22/线性判别分析/">
+    <link itemprop="mainEntityOfPage" href="https://webstertong.xyz/2019/08/01/薛兆丰经济学讲义/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yutong Sun">
@@ -345,7 +345,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">线性判别分析 LDA
+          <h1 class="post-title" itemprop="name headline">薛兆丰经济学讲义 - 读书笔记
 
               
             
@@ -371,24 +371,12 @@
                 
               
 
-              <time title="Created: 2019-06-22 18:20:19" itemprop="dateCreated datePublished" datetime="2019-06-22T18:20:19+01:00">2019-06-22</time>
+              <time title="Created: 2019-08-01 22:02:34 / Modified: 22:03:19" itemprop="dateCreated datePublished" datetime="2019-08-01T22:02:34+01:00">2019-08-01</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-06-27 17:47:08" itemprop="dateModified" datetime="2019-06-27T17:47:08+01:00">2019-06-27</time>
               
             
           </span>
@@ -405,7 +393,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/降维/" itemprop="url" rel="index"><span itemprop="name">降维</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书笔记/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a></span>
 
                 
                 
@@ -447,18 +435,19 @@
       
 
       
-        <p>线性判别分析是监督学习算法，他与主成分分析法的不同之处在于，它主要用于处理提供了类别标签的数据。主成分分析法的缺陷是无监督学习会导致原本线性可分的数据投影到低维空间之后，不同数据类型混杂在一起，变为数据不可分的数据集。而线性判别分析法通过将类间散度最大化，同时最小化类内散度，将映射后的数据依然保留良好的分离度。本节我们介绍根据类间散度矩阵和类内散度矩阵实现维度缩减的方法 ——线性判别分析（Linear Discriminant Analysis, LDA）</p>
-<p>因为线性判别分析处理的是有分类数据，所以它在降维的过程中要尽量将不同类型的数据在映射后的低维空间依然能展现出良好的分离度。所以我们优化的目标就是让类与类之间的距离尽可能大，让同类数据之间的距离尽可能小。我们首先定义类间散度矩阵，它的大小显示出不同类别之间的距离。但由于对于2分类的数据与多分类的数据类内散度矩阵和类间散度矩阵的表示方式是不同的，所以我们分别对其进行定义。</p>
+        <h2 id="薛兆丰经济学讲义"><a href="#薛兆丰经济学讲义" class="headerlink" title="薛兆丰经济学讲义"></a>薛兆丰经济学讲义</h2><h4 id="马粪争端案"><a href="#马粪争端案" class="headerlink" title="马粪争端案"></a>马粪争端案</h4><p><strong>在生活中，很多人讨论什么才是公正的，但背后其实很可能是在对效率做出考量。</strong></p>
+<p>人们谈到公平与效率时，总会说要么是公平优先，要么是效率优先，二者此消彼长、互相对立。事实上，一点儿马粪，判给谁不重要，重要的是案件对于后代产生的影响。鼓励人们创造财富，社会才会越来越好。</p>
+<p>公正背后是效率的考量。</p>
+<p>尊重别人的财富，不能见猎心起、顺手牵羊，这是一种朴实的公正观，每位负责任的家长都会向子女创收这种观念。但在这种公正观背后，确实效率的考量——保护产权的努力是会消耗资源的，这种消耗越大，资源的净值就越低；社会的道德规范，越是能够帮助降低这种消耗，社会财富的积累就越多。</p>
+<p>当我们讨论公正的问题时，背后的含义往往是：这是符合效率标准的。往往是那些让社会里每个人都有积极性去积累财富的规则，或者那些让社会能够健康发展的规则，才是公正的规则。</p>
 <a id="more"></a>
-<p>二分类数据：$S_b = (\mu_0 - \mu_1)(\mu_0 - \mu_1)^T$</p>
-<p>多分类数据：$S_b = \sum ^C _{i=1} N_i(\mu_i-\mu)(\mu_i-\mu)^T$ 其中 $\mu$ 为所有类的均值 $\mu =\frac{1}{N} \sum x$</p>
-<p>对于类内散度矩阵我们定义：</p>
-<p>二分类数据：$S_w = \sum^2_{i=1}\sum_{x\in W_i}(x-\mu_i)(x-\mu_i)^T$ 其中$\mu_i = \frac{1}{N_i} \sum_{x\in W_i}x$</p>
-<p>多分类数据：$S_w = \sum^C_{i=1}\sum_{x\in W_i}(x - \mu_i)(x - \mu_i)^T$</p>
-<p>为了将不同类型的数据在映射之后的维度空间尽可能分隔开，我们只需要将 $S_b$ 尽可能大，$S_w$ 尽可能小即可。所以优化函数可以定义为：</p>
-<p>​                                                    $J = \frac{W^TS_bW}{W^TS_wW}$  (W为映射矩阵)</p>
-<p>通过对J求导可以得到，对于二分类数据 $S^{-1}_W(\mu_0-\mu_1)$时，J可以取到最大值。对于多分类数据，W映射矩阵由C-1个向量组成，其中第k个向量是$S^{-1}_WS_b$的第k个特征向量。所以在多分类问题中，线性判别分析的一个缺陷是它只能将高维数据降到C-1维或者更低维度。其中C为原始数据的类型数量。</p>
-<p>最后使用得到的映射矩阵，可以将原始数据映射到低维空间，并保证了低维空间中的数据依然保留了原始数据的最大分离度。</p>
+<h4 id="看得见的和看不见的"><a href="#看得见的和看不见的" class="headerlink" title="看得见的和看不见的"></a><strong>看得见的和看不见的</strong></h4><p>巴斯夏100多年前写的文章《看得见的和看不见的》文章中，开篇就斩钉截铁的说，好经济学家与坏经济学家的区别只有一点，华经济学家只能看见可以看见的结果，二号经济学家却能同时权衡可以看得见的后果和通过推测得到的后果。</p>
+<p>破窗理论</p>
+<p>很多环保主义者反对用大量的塑料袋来包食物，因为这会造成很大的浪费。但这位经济学家说，塑料袋用得越多，食物保鲜的时间就越长，事物的浪费就越少。我们要看到的，不仅仅是用了多少塑料袋，还要看到，如果不用塑料袋，要扔掉多少食物。</p>
+<p>认识破窗理论的谬误之所以困难，是因为连经济学家自己往往也说不清楚，那些节省下来的时间、人力和资源能用到什么新的工作和生产上，而那些多话费的物资又会带来多大的隐形利益。要理解好这个问题需要一点想象力。</p>
+<h4 id="歧视的作用和限制歧视的恶果"><a href="#歧视的作用和限制歧视的恶果" class="headerlink" title="歧视的作用和限制歧视的恶果"></a>歧视的作用和限制歧视的恶果</h4><p>历史上，美国人的购房率一向都是比较低，其中一个原因是银行家非常谨慎，不轻易放贷，因此大多数的美国人买不起房。而从1960年开始，美国开始了轰轰烈烈的平权运动，目的是矫正社会上不公平的现象，支持所谓的弱势群体鼓励他们买房。</p>
+<p>商业银行是商业机构，不会随便放松放贷条件，承担不应用的风险。为了促使银行放贷，政府威逼利诱双管齐下，最后导致次贷危机。</p>
+<p>这次危机告诉我们，在现实中歧视往往都是有原因的，尤其在激烈竞争的市场经济下，歧视往往也是有效率的。如果出于政治原因，政府逼着市场改变其实标准的话，就有可能酿成恶果。</p>
 
       
     </div>
@@ -489,8 +478,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/22/主成分分析法PCA/" rel="next" title="主成分分析法PCA">
-                <i class="fa fa-chevron-left"></i> 主成分分析法PCA
+              <a href="/2019/07/15/原则/" rel="next" title="原则 - 读书笔记">
+                <i class="fa fa-chevron-left"></i> 原则 - 读书笔记
               </a>
             
           </div>
@@ -498,10 +487,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/29/人类简史/" rel="prev" title="人类简史 - 读书笔记">
-                人类简史 - 读书笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -545,8 +530,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -659,6 +653,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#薛兆丰经济学讲义"><span class="nav-number">1.</span> <span class="nav-text">薛兆丰经济学讲义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#马粪争端案"><span class="nav-number">1.0.1.</span> <span class="nav-text">马粪争端案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#看得见的和看不见的"><span class="nav-number">1.0.2.</span> <span class="nav-text">看得见的和看不见的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#歧视的作用和限制歧视的恶果"><span class="nav-number">1.0.3.</span> <span class="nav-text">歧视的作用和限制歧视的恶果</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
