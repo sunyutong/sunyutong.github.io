@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Critically Evaluate the Effects of Momentum in Logistic RegressionAbstract— Logistic regression determines model parameters by using gradient descent of the optimization algorithm, which is also possi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习论文 - 评估动量参数对逻辑回归算法的影响">
+<meta property="og:url" content="https://webstertong.xyz/2019/08/15/MachineLearning/index.html">
+<meta property="og:site_name" content="Toby的羽绒被窝">
+<meta property="og:description" content="Critically Evaluate the Effects of Momentum in Logistic RegressionAbstract— Logistic regression determines model parameters by using gradient descent of the optimization algorithm, which is also possi">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/Sigmoid_Function.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/3D_Loss_Function.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/3D_Error_Function.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/P1A1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/P1A2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/P1T1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/Learning%20rate%20-%20Momentum.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/P1T2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/P1T3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/ROC_Curve.png">
+<meta property="og:updated_time" content="2019-08-15T13:52:09.135Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习论文 - 评估动量参数对逻辑回归算法的影响">
+<meta name="twitter:description" content="Critically Evaluate the Effects of Momentum in Logistic RegressionAbstract— Logistic regression determines model parameters by using gradient descent of the optimization algorithm, which is also possi">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/Sigmoid_Function.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://webstertong.xyz/2019/08/15/MachineLearning/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>机器学习论文 - 评估动量参数对逻辑回归算法的影响 | Toby的羽绒被窝</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Toby的羽绒被窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Best or Nothing</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-books">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/读书笔记/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>Books</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-machine-learning">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/机器学习/" rel="section"><i class="menu-item-icon fa fa-fw fa-graduation-cap"></i> <br>Machine Learning</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://webstertong.xyz/2019/08/15/MachineLearning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yutong Sun">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Toby的羽绒被窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习论文 - 评估动量参数对逻辑回归算法的影响
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-15 14:22:12 / Modified: 14:52:09" itemprop="dateCreated datePublished" datetime="2019-08-15T14:22:12+01:00">2019-08-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Critically-Evaluate-the-Effects-of-Momentum-in-Logistic-Regression"><a href="#Critically-Evaluate-the-Effects-of-Momentum-in-Logistic-Regression" class="headerlink" title="Critically Evaluate the Effects of Momentum in Logistic Regression"></a><strong>Critically Evaluate the Effects of Momentum in Logistic Regression</strong></h2><p><strong>Abstract</strong>— Logistic regression determines model parameters by using gradient descent of the optimization algorithm, which is also possible to improve the training efﬁciency of the model by adding some other parameters. The main goal of this article is to implement a logistic regression classiﬁcation model containing the momentum parameter. The effects of the momentum parameter on the test performance of the logistic regression model was mainly evaluated on different datasets. The analysis is performed by the number of iterations, the accuracy, and the ROC curve. Experiments show that gradient descent algorithm with momentum can reduce the convergence time and reduce the amplitude of oscillation. At the same time, the existence of momentum will make the process of gradient decline easily jump out of the local optimum. All implementations of momentum experiments are through the Python programming language. The datasets use Breast Cancer, Iris, and Handwritten Digits.</p>
+<p><strong>keywords: Logistic regression, Gradient descend, Momentum</strong></p>
+<a id="more"></a>
+<h2 id="I-INTRODUCTION"><a href="#I-INTRODUCTION" class="headerlink" title="I. INTRODUCTION"></a><strong>I. INTRODUCTION</strong></h2><p>In recent years, with the continuous advancement of computer science and the continuous efforts of increasing number of researchers, machine learning technology has received more and more attention from society. The results of machine learning have helped solve human needs and have played a big role in medical, education, and market. Logistic regression is a very common and important classiﬁcation algorithm in machine learning[1]. The purpose of this article is to implement a logistic regression model and to train and test three different datasets.</p>
+<p>To determine a classiﬁcation model for logistic regression, the most important thing is to determine the weight vector of the features. Generally, the weight is determined by minimizing the cost function. Nowadays, the most common optimization algorithm is the gradient descent algorithm[4]. However, the gradient descent method has several problems. One is that if the learning rate is too large during the gradient descent, resulting in a large amplitude of oscillation; the learning rate is too small, which leads to the slow convergence speed. Therefore, the number of iterations will be very large in order to ﬁnd the optimum, which will affect the efﬁciency of the optimization algorithm. In addition, when using gradient descent to solve the cost function minimum, it is easy to fall into the local optimum. This is because in the process of convergence, the decline is close to the minimum value, the amplitude of convergence will become small[3].</p>
+<p>In order to solve these problems existing in traditional optimization algorithms, it is necessary to use new variables. Momentum is a concept that was proposed by Jegadeesh and Titman in 1993, but there is not much research on momentum. In fact, the momentum parameter is very useful. The momentum is derived from Newton’s law. The basic idea is to ﬁnd the optimal effect of adding ”inertia”[2]. For example, when there is a ﬂat area in the error surface, we can increase the weight by adjusting the value of the momentum, so that the descend will take by a larger step and accelerate the convergence at each iteration.</p>
+<p>This article describes the entire process of implementing a logistic regression algorithm with momentum parameter. In the background section, all the technical knowledge involved is introduced; in the experimental chapter, the traditional gradient descent and the momentum gradient descent are compared. In addition, since the logistic regression algorithm has been implemented in scikit-learning, the experiment will compare our logistic regression algorithm and the scikit-learning algorithm with accuracy of the prediction. Analysis section details all the data comparison results. Give conclusions at the end of the article.</p>
+<h2 id="II-BACKGROUND"><a href="#II-BACKGROUND" class="headerlink" title="II. BACKGROUND"></a>II. BACKGROUND</h2><h3 id="A-Logistic-regression-model"><a href="#A-Logistic-regression-model" class="headerlink" title="A. Logistic regression model"></a>A. Logistic regression model</h3><p>For linearly separable datasets, linear perceptron can be used for good classiﬁcation. However, for linearly inseparable data, there is no way to ﬁnd a straight line to distinguish the two categories well. Because the linear regression algorithm can not effectively classify the linearly inseparable data[1]. Therefore, some new classiﬁers, such as logistic regression, are needed. The advantage of logistic regression is that it not only predicts which class a particular sample belongs to, but also gives the probability that the sample belongs to that class[1].</p>
+<p>The general steps of logistic regression: First, determine the hypothesis function. Second, determine the cost function. Finally, minimize the cost function and return the regression coefﬁcient.</p>
+<p>• Determine the hypothesis function,for general linear classiﬁcation problems. Hypothesis function:</p>
+<script type="math/tex; mode=display">f(x)=W^T*X_b</script><p>$X_b$ means add a column, which all is 1, before the ﬁrst column of the feature matrix for each sample. $W^T$ means weight matrix.</p>
+<p>The value of f(x) belongs to [−∞, +∞], and the probability of belonging to a certain class cannot be given very well. In order to achieve probabilistic prediction, we need a mapping function that can map the result of the classiﬁcation well to the probability between [0, 1], and this function can have good differentiability. Thus, use the Sigmoid function here[1].</p>
+<script type="math/tex; mode=display">f(x)=\frac{1}{1+e^{W^T}*X_b}\to g(Z)=\frac{1}{1+e^-Z}</script><p>The image of Sigmoid function is shown below (Figure 1).</p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/Sigmoid_Function.png" alt="logo"> </p>
+<p>When z is 0, the probability value is 0.5, assuming z is the classiﬁer, and the classiﬁer result is 0, indicating that that any class is possible. Assume that the data is divided into two classes, which can be divided into class 0 and class 1; when the z value is greater than 0, the probability of sigmoid is greater than 0.5, indicating that it is biased toward class 1; otherwise, it is biased toward class 0.</p>
+<p>• Determine the cost function, the most commonly used is the squared loss function:</p>
+<script type="math/tex; mode=display">J(W)=\sum_{i}{\frac{1}{2}(g(Z_i)-y_i)^2}</script><p>$Z=W^T*X_b$, parameter i means the $i^{th}$ example, $y_i$ means the true value, $g(Z_i)$ means the prediction value.</p>
+<p>However, this loss function is a non-convex function, which results in a local minimum when using the gradient descent method to ﬁnd the minimum value[3]. Therefore, need to ﬁnd a loss function which is a convex function. Suppose the output of the Sigmoid function is a probability result classiﬁed as 1, which can get:</p>
+<script type="math/tex; mode=display">\{  {P(y=1)=g(W^T*X_b)=g(Z) \atop P(y=0)=1-g(Z)} \to p(y|X)=\hat y^y(1-\hat y)^{1-y}</script><p>Through the above formula to analyze the situation of the two classiﬁcations, we can know that our purpose is to obtain the parameter W, so that the classiﬁcation result of $p(y|X)$ for class 0 and class 1 is as large as possible. However, the loss function we deﬁne is actually ﬁnd the minimum. Therefore, it is necessary to take a negative number for $p(y|X)$, which can turn it into the problem of ﬁnding the minimum value. At the same time, in order to facilitate the calculation, the formula is usually taken as a log. Finally, loss function can be got:</p>
+<script type="math/tex; mode=display">L(f(x),y)=-\{ylogf(x)+(1-y)log(1-f(x))\}</script><p>The function image of L(f(x),y) which only have two features is shown below (Figure 2).</p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/3D_Loss_Function.png" alt="logo"></p>
+<p>For all samples, the ﬁnal Error function can be got by calculating the average of the loss values. The Error function image is shown in Figure 3.</p>
+<script type="math/tex; mode=display">E=J(W)=\frac{1}{m}\sum^m_{i=1}L(\hat y,y)</script><p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/3D_Error_Function.png" alt="logo"></p>
+<p>• Minimize the cost function and return the regression coefﬁcient, which could obtain the optimal regression model. Common optimization methods are the gradient descent method, Newton method and so on[3]. The gradient descent method is the simplest and most commonly used optimization method. The optimization idea of the gradient descent method is to use the negative gradient direction of the current position as the search direction because the direction is the fastest downward direction of the current position. The closer to the target value during the descent, the step size become smaller.[4].</p>
+<p>A gradient is a vector that is the partial derivative of an n-ary function with respect to n variables. Therefore, the formula of gradient descent can be obtained.</p>
+<script type="math/tex; mode=display">\frac{\partial E}{\partial W_j}=\frac{\partial E}{\partial f(X)}*\frac{\partial f(X)}{\partial W^TX_b}*\frac{\partial W^TX_b}{\partial W_j}=\sum_i(f(x_i)-y_i)\cdot x_{ij}</script><p>Gradient variation formula:</p>
+<script type="math/tex; mode=display">W_j=W_j-\alpha \frac{\partial E}{\partial W_j}</script><p>$\alpha$ is learning rate.</p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/P1A1.png" alt="logo"></p>
+<h3 id="B-Gradient-descedn-with-momentum"><a href="#B-Gradient-descedn-with-momentum" class="headerlink" title="B. Gradient descedn with momentum"></a>B. Gradient descedn with momentum</h3><p>For gradient descent method, the number of iterations required by the solution process will need many times and the efﬁciency is inadequate. Thus, the word momentum was introduced in machine learning. Momentum will help to increase the step size when the gradient is falling and the direction of the descend is constant. Additionally, when the direction of the descends changes, the step size and the amplitude of the oscillation are decreased[5]. In other words, after adding the momentum parameter, the gradient descent method can greatly improve efﬁciency when ﬁnding the optimum. At the same time, momentum is a good method to solve the problem of easy to fall into local optimum for gradient descend[6].</p>
+<p>Weight upgrade with momentum:</p>
+<script type="math/tex; mode=display">W(t+1)=W(t)-\alpha \frac{\partial E}{\partial W}+m\cdot (W(t)-W(t-1))</script><p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/P1A2.png" alt="logo"></p>
+<h2 id="III-EXPERIMENT"><a href="#III-EXPERIMENT" class="headerlink" title="III. EXPERIMENT"></a>III. EXPERIMENT</h2><h3 id="A-Datasets-Description"><a href="#A-Datasets-Description" class="headerlink" title="A. Datasets Description"></a>A. Datasets Description</h3><p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/P1T1.png" alt="logo"></p>
+<p>Three datasets with different characteristics are used in this experiment, which includes breast cancer dataset, iris data set and handwritten digits dataset.</p>
+<p>• The breast cancer dataset contains 569 examples and 30 features, which is a classic binary classiﬁcation dataset and the type of features is continues, so the data set can be trained well by using logistic regression algorithm.</p>
+<p>• The Iris dataset consists of 3 different types of irises (Setosa, Versicolour, and Virginica). It includes 4 dimensionality and 150 samples, which is a classic and very easy multi-class classiﬁcation dataset. Traditional logistic regression algorithm cannot solve multi-classiﬁcation problems. Therefore, improved logistic regression is implemented, using the one-vsrest (OvR) scheme to deal with the multi-class dataset.</p>
+<p>• The handwritten digits dataset is a multi-class dataset, contained 1797 samples, each of which is an 8x8 image. Every image is a hand-written digit. So it cannot be overused some feature selection techniques. By using multi-class dataset, the momentum parameter can be observed in the improved logistic regression algorithm for multi-classiﬁcation problems.</p>
+<h3 id="B-Data-Preprocessing"><a href="#B-Data-Preprocessing" class="headerlink" title="B. Data Preprocessing"></a>B. Data Preprocessing</h3><p>In order to make the performance of the algorithm as good as possible, the data set needs to be preprocessed which includes mean normalization and standardization. These methods of feature scaling can reduce the time spent training the dataset, improve the speed of iterative convergence and the accuracy of the result. Since our momentum parameter will improve the convergence speed of the algorithm iteration, it is necessary to eliminate interference factors by normalizing the data.</p>
+<h3 id="C-Feature-selection-technology"><a href="#C-Feature-selection-technology" class="headerlink" title="C. Feature selection technology"></a>C. Feature selection technology</h3><p>After the data normalization is completed, a feature selection technique named Univariate feature selection is used to extract the important features in the dataset, and the irrelevant feature items are eliminated, simplifying the complexity of the dataset. Feature selection is necessary for datasets with a large number of features. The Univariate feature selection is to select the few highest-rated features by the chi-square statistic based on the Univariate statistical metric[7].</p>
+<h3 id="D-Experimental-procedure"><a href="#D-Experimental-procedure" class="headerlink" title="D. Experimental procedure"></a>D. Experimental procedure</h3><p>• Experiment I. In this experiment, momentum parameter is adjusted at a speciﬁc learning rate and plot a group of graphs which shows the effects of momentum and learning rate on the gradient descent algorithm. At the same time, a graph is plotted which shows the changes in loss function with different number of iterations. The result about loss function and iterations is shown in Figure 4. </p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/Learning%20rate%20-%20Momentum.png" alt="logo"></p>
+<p>• Experiment II. According to three datasets, use a ﬁxed number of iterations to observe the accuracy of test data sets for different momentum parameter. The result is shown in Table II.</p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/P1T2.png" alt="logo"></p>
+<p>• Experiment III. Compared with the logistic regression algorithm without momentum, observe whether the logistic regression algorithm using the momentum parameter has a fewer number of iterations. Set the iteration termination condition to the loss function with a reduction of less than 0.0001 and observe the number of iterations of the gradient descent algorithm in a speciﬁc data set for different momentum. The result is shown in Table III.</p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/P1T3.png" alt="logo"></p>
+<p>• Experiment IV. Compared the implemented logistic regression algorithm with it in scikit-learn, observe their accuracy and plot ROC curve. The result is shown in Figure 5.</p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/ROC_Curve.png" alt="logo"></p>
+<h2 id="IV-ANALYSIS"><a href="#IV-ANALYSIS" class="headerlink" title="IV. ANALYSIS"></a>IV. ANALYSIS</h2><p>Overall, four experiments are performed and the momentum parameter has advantages and disadvantages which have been clearly shown in this project. The following subsections provide explanations and analysis the results for each experiment.</p>
+<h3 id="A-Experiment-I-analysis"><a href="#A-Experiment-I-analysis" class="headerlink" title="A. Experiment I analysis"></a>A. Experiment I analysis</h3><p>According to the Figure 6, when the learning rate is set a very small value, for example, $l_r$ = 0.01, the parameter momentum can help the gradient descent algorithm to increase the step size of each iteration. In the case of the same number of iterations, the larger the momentum, the closer the result is to the optimum. Therefore, using momentum can increase the speed of iterations and reduce the number of iterations to improve the efﬁciency of algorithm execution. However, when the learning rate and the momentum are both very small, the effects of the momentum is very limited.</p>
+<p>When the learning rate is set a relatively small value, for example, $l_r$ = 0.1, after the increase of momentum causes the result of the gradient to reach the minimum value, the size of the previous step is multiplied by the momentum parameter as new step size to continue iterating in the original direction. It will not update parameters in the direction of the negative gradient until the learning rate multiplied by the gradient is offset by the momentum multiplied by the size of the last step. The advantage is that the local best can be jumped out in some data sets.</p>
+<p>When the learning rate is large and the momentum parameter is relatively small, for example, $l_r$ = 0.9 mo = 0.1, using the momentum parameter can reduce the number of iterations. However, once the momentum parameter and the learning rate are set to a large value, the step size of each iteration is very large and logistic regression cannot give the best result.</p>
+<h3 id="B-Experiment-II-analysis"><a href="#B-Experiment-II-analysis" class="headerlink" title="B. Experiment II analysis"></a>B. Experiment II analysis</h3><p>According to Table II, the number of iterations in the gradient descent algorithm is set to 100 for three different datasets. In the case of the same number of iterations, for breast cancer dataset, as the value of momentum increases, the accuracy of the logistic regression algorithm increases. Furthermore, the table shows that When momentum is increased from 0.1 to 0.5, the accuracy of the algorithm is stable at 0.9292. When momentum is increased by 0.9, the accuracy of the algorithm increases, which means that in some data sets, it can get rid of the local best with the increase of momentum.</p>
+<p>In the iris dataset, the larger the momentum is, the higher the accuracy of the algorithm because the current learning rate is relatively small for this dataset.</p>
+<p>For handwritten digits datasets, when momentum is increased from 0 to 0.5, the accuracy of algorithm rises but when momentum is equal to 0.9, the size of steps is too large lead to the decline of accuracy in the limited number of iterations.</p>
+<h3 id="C-Experiment-III-analysis"><a href="#C-Experiment-III-analysis" class="headerlink" title="C. Experiment III analysis"></a>C. Experiment III analysis</h3><p>According to table III, in the case of low learning rates, the logistic regression algorithm can get trapped in local minimum easily. When the learning rate is 0.01 and momentum is 0, 0.1 or 0.5, the accuracy of the prediction is exactly the same, which means the model parameters trained in the data set are exactly the same. However, all the result gets stuck in a local best, because when the momentum is set to 0.9, the accuracy rate indicates that the result jumps out of the previous local best.</p>
+<p>Therefore, when momentum is relatively large, such a situation of falling into a local minimum may be solved. Because when the momentum parameter becomes large and the loss function reaches a local minimum, the weight parameter still needs to be updated and adjusted in the original direction, and the magnitude of this adjustment is affected by the momentum parameter. The larger momentum parameter is, the larger magnitude of the change, so the large momentum parameter will make the logistic regression algorithm have a greater probability to jumps out of the local best.</p>
+<p>When the learning rate is 0.4, the gradient descent of the logistic regression algorithm can already ﬁnd the global optimum, so the accuracy is the same with different momentum. In this case, the momentum parameter has no effect on the experimental results. The increase of the momentum parameter only reduces the number of iterations of the gradient descent algorithm, and the number of iterations decreases with the increase of the momentum.</p>
+<p>When the learning rate and momentum are large, this case causes the termination condition of algorithm to never be reached, which means the decrease in gradient descent never is less than epsilon parameter. So, another termination condition is triggered which makes the iteration number is equal to the maximum number of iterations.</p>
+<h3 id="D-Experiment-IV-analysis"><a href="#D-Experiment-IV-analysis" class="headerlink" title="D. Experiment IV analysis"></a>D. Experiment IV analysis</h3><p>Comparison of ROC curves, in general, the logistic regression algorithm with momentum has the same accuracy as the logistic regression algorithm on scikit-learn.</p>
+<h2 id="V-CONCLUSIONS"><a href="#V-CONCLUSIONS" class="headerlink" title="V. CONCLUSIONS"></a>V. CONCLUSIONS</h2><p>This project has considered some effects of momentum on the classiﬁcation performance of logistic regression models in several ways. By controlling the variables, the accuracy and iteration efﬁciency of the model are veriﬁed under different learning rates and momentum. Through experimental analysis, it can be concluded that the appropriate momentum plays an important role in accelerating the convergence speed when the learning rate is small.</p>
+<p>When the learning rate is large, the appropriate momentum plays an important role in reducing the amplitude of the oscillation during convergence. Although momentum will bring certain beneﬁts to the optimization algorithm, there are still some problems. For example, when the momentum is too large, for some data sets, it could have been correctly converged, but the momentum is large, the iteration will proceed towards the inverse gradient. In addition, how to make the optimization algorithm update different parameters according to the importance of the parameters. Therefore, we will conduct more experiments on the use of momentum parameter and do more research on optimization algorithms to achieve more and better classiﬁcation algorithms.</p>
+<h2 id="REFERENCES"><a href="#REFERENCES" class="headerlink" title="REFERENCES"></a>REFERENCES</h2><p>[1] Hosmer Jr, D.W., Lemeshow, S. and Sturdivant, R.X., 2013. Applied logistic regression (Vol. 398). John Wiley Sons.</p>
+<p>[2] Jegadeesh, N. and Titman, S., 2001. Proﬁtability of momentum strategies: An evaluation of alternative explanations. The Journal of ﬁnance, 56(2), pp.699-720.</p>
+<p>[3] Kingma, D. P., Ba, J. (2014). Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980.</p>
+<p>[4] Qian, N., On the momentum term in gradient descent learning algorithms. Neural networks, Volume 12, Issue 1, 1999, pp. 145-151.</p>
+<p>[5] Rehman, M. Z., Nawi, N. M. (2011, June). The effect of adaptive momentum in improving the accuracy of gradient descent back propagation algorithm on classiﬁcation problems. In International Conference on Software Engineering and Computer Systems (pp. 380-390). Springer, Berlin, Heidelberg.</p>
+<p>[6] Willamette University (1999). Momentum and Learning Rate Adaptation. Available at: <a href="https://www.willamette.edu/∼gorr/classes/cs449/momrate.html" target="_blank" rel="noopener">https://www.willamette.edu/∼gorr/classes/cs449/momrate.html</a>, (Accessed: 30 October 2018).</p>
+<p>[7] Zhao, Z., Morstatter, F., Sharma, S., Alelyani, S., Anand, A. and Liu, H., 2010. Advancing feature selection research. ASU feature selection repository, pp.1-28.</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/01/薛兆丰经济学讲义/" rel="next" title="薛兆丰经济学讲义 - 读书笔记">
+                <i class="fa fa-chevron-left"></i> 薛兆丰经济学讲义 - 读书笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Yutong Sun</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/sunyutong" title="GitHub &rarr; https://github.com/sunyutong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:s.y.tobytennyson@gmail.com" title="E-Mail &rarr; mailto:s.y.tobytennyson@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://instagram.com/s.y.toby_" title="Instagram &rarr; https://instagram.com/s.y.toby_" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/images/myself.jpeg" title="Wechat &rarr; /images/myself.jpeg"><i class="fa fa-fw fa-wechat"></i>Wechat</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Critically-Evaluate-the-Effects-of-Momentum-in-Logistic-Regression"><span class="nav-number">1.</span> <span class="nav-text">Critically Evaluate the Effects of Momentum in Logistic Regression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I-INTRODUCTION"><span class="nav-number">2.</span> <span class="nav-text">I. INTRODUCTION</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#II-BACKGROUND"><span class="nav-number">3.</span> <span class="nav-text">II. BACKGROUND</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Logistic-regression-model"><span class="nav-number">3.1.</span> <span class="nav-text">A. Logistic regression model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Gradient-descedn-with-momentum"><span class="nav-number">3.2.</span> <span class="nav-text">B. Gradient descedn with momentum</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#III-EXPERIMENT"><span class="nav-number">4.</span> <span class="nav-text">III. EXPERIMENT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Datasets-Description"><span class="nav-number">4.1.</span> <span class="nav-text">A. Datasets Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Data-Preprocessing"><span class="nav-number">4.2.</span> <span class="nav-text">B. Data Preprocessing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-Feature-selection-technology"><span class="nav-number">4.3.</span> <span class="nav-text">C. Feature selection technology</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D-Experimental-procedure"><span class="nav-number">4.4.</span> <span class="nav-text">D. Experimental procedure</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IV-ANALYSIS"><span class="nav-number">5.</span> <span class="nav-text">IV. ANALYSIS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Experiment-I-analysis"><span class="nav-number">5.1.</span> <span class="nav-text">A. Experiment I analysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Experiment-II-analysis"><span class="nav-number">5.2.</span> <span class="nav-text">B. Experiment II analysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-Experiment-III-analysis"><span class="nav-number">5.3.</span> <span class="nav-text">C. Experiment III analysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D-Experiment-IV-analysis"><span class="nav-number">5.4.</span> <span class="nav-text">D. Experiment IV analysis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V-CONCLUSIONS"><span class="nav-number">6.</span> <span class="nav-text">V. CONCLUSIONS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#REFERENCES"><span class="nav-number">7.</span> <span class="nav-text">REFERENCES</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yutong Sun</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.2</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">全站共 16.1k 字</span>
+</div>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+
+</body>
+</html>
