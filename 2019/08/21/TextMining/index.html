@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css?v=1.0.2">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Text Mining on Social Media about Places of InterestAbstract—Sentiment analysis through social media is an effective approach to straightforwardly evaluate visitors’attitudes and comments of attractio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="文本挖掘论文 - 社交网络中的兴趣地点">
+<meta property="og:url" content="https://webstertong.xyz/2019/08/21/TextMining/index.html">
+<meta property="og:site_name" content="Toby的羽绒被窝">
+<meta property="og:description" content="Text Mining on Social Media about Places of InterestAbstract—Sentiment analysis through social media is an effective approach to straightforwardly evaluate visitors’attitudes and comments of attractio">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining1.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining2.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining3.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining4.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining5.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining7.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining8.png">
+<meta property="og:updated_time" content="2019-08-19T20:11:44.123Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="文本挖掘论文 - 社交网络中的兴趣地点">
+<meta name="twitter:description" content="Text Mining on Social Media about Places of InterestAbstract—Sentiment analysis through social media is an effective approach to straightforwardly evaluate visitors’attitudes and comments of attractio">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining1.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://webstertong.xyz/2019/08/21/TextMining/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>文本挖掘论文 - 社交网络中的兴趣地点 | Toby的羽绒被窝</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Toby的羽绒被窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Best or Nothing</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-books">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/读书笔记/" rel="section"><i class="menu-item-icon fa fa-fw fa-book"></i> <br>Books</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-machine-learning">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/机器学习/" rel="section"><i class="menu-item-icon fa fa-fw fa-graduation-cap"></i> <br>Machine Learning</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://webstertong.xyz/2019/08/21/TextMining/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yutong Sun">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Toby的羽绒被窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">文本挖掘论文 - 社交网络中的兴趣地点
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-21 21:10:14" itemprop="dateCreated datePublished" datetime="2019-08-21T21:10:14+01:00">2019-08-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-19 21:11:44" itemprop="dateModified" datetime="2019-08-19T21:11:44+01:00">2019-08-19</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Text-Mining-on-Social-Media-about-Places-of-Interest"><a href="#Text-Mining-on-Social-Media-about-Places-of-Interest" class="headerlink" title="Text Mining on Social Media about Places of Interest"></a>Text Mining on Social Media about Places of Interest</h2><p><strong>Abstract</strong>—Sentiment analysis through social media is an effective approach to straightforwardly evaluate visitors’attitudes and comments of attractions. In this project, we mainly focus on tweets mentioning the Eiffel Tower to study their emotional bias. We use two methods, lexicon method and deep learning classiﬁer, to analyze it and compare the results. Also, we try to ﬁnd out other interest of locations mentioned by Twitters who mention Eiffel Tower or Colosseum. The results show that most of the comments to Eiffel Tower are positive, and the location of attractions will always be jointly mentioned while Las Vegas and China are both in the top 10 favorites jointly mentioned list of these tweets.</p>
+<p><strong>Keywords—Social media analysis, Sentiment analysis, Tourist attraction, Twitter.</strong></p>
+<a id="more"></a>
+<h2 id="I-INTRODUCTION"><a href="#I-INTRODUCTION" class="headerlink" title="I. INTRODUCTION"></a>I. INTRODUCTION</h2><p>Tourism is the economic backbone of many countries, and it is vital to the development of cities and nations. In recent years, researchers have tried to ﬁgure out the relationship between tourists’ evaluation of the attractions and the return visit rate, which to enhance the appeal of the attractions by studying the evaluation of tourists.</p>
+<p>With the dramatic development of social media, people are more willing to record their opinions and emotions on social media. In the past, researchers can only study the evaluation of attractions through street interviews, questionnaires, collating news analysis or other more complex methods, but now they can easily obtain information via social media such as Twitter, which has become a universal and irreplaceable platform for people to comment. Also, social media allows people to share their location and the emotional state at that time. Generally, these data are more authentic and straightforward than those collected traditionally.</p>
+<p>There is concern about how to effectively analyze social media and make that information more valuable. Some scholars have proposed a sentiment-based text analysis method called sentiment analysis. In this work, we present two approaches to analyze the sentiment of the tweet which mentioned Eiffel Tower on Twitter; they are the lexicon-based method and one deep learning classiﬁer fastText.</p>
+<h2 id="II-RELATED-WORK"><a href="#II-RELATED-WORK" class="headerlink" title="II. RELATED WORK"></a>II. RELATED WORK</h2><p>In general, the sentiment contained in the text fall into three categories, positive,neutral and negative, which called sentiment polarity. [1] Besides, there are three ways to sentiment classiﬁcation. Due to the limited data collection, in this work, we apply lexicon-based way. Aitor et al. [2] proposed a Spanish lexical databased for sentiment analysis algorithm which aims to collect and evaluate the online review in various tourism and its restaurants in Spanish. Meehan et al. [3] proposed an intelligent recommendation system that applies sentiment analysis to the context in the social media. Based on the evaluation of most tourists on social media, this system accurately locates the target population of the attraction and intelligently recommends it to different users. FastText is a text classiﬁer developed by Facebook AIResearch. Compared to deep learning classiﬁers on the cutting edges, it can perform dramatically faster on large corpora for training and evaluation with corresponding accuracy [4]. According to Joulin et al., fastText can be trained on one billion words is less than ten minutes, and divide the 500,000 sentences into 312,000 categories in less than one minute with a standard multi-core CPU. Therefore, in this project, we choose fastText trained as a classiﬁer to assign tags to Twitter data for following sentiment analysis.</p>
+<h2 id="III-METHODOLOGY"><a href="#III-METHODOLOGY" class="headerlink" title="III. METHODOLOGY"></a>III. METHODOLOGY</h2><p>For the subject of this experiment, word frequency statistics, named entity recognition and sentiment analysis are mainly used in the text content analysis part. This paper is developed according to the ﬂow of Figure 1: (1) collecting data and preprocessing the text (such as eliminating duplicate information, modifying the text format, etc.) to form structured data; (2) time series analysis and quantitative analysis of information, Content analysis; (3) Forming the visualization results of the analysis results, and drawing the corresponding research conclusions.</p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining1.png" alt="logo"></p>
+<h3 id="A-Data-Collection"><a href="#A-Data-Collection" class="headerlink" title="A. Data Collection"></a>A. Data Collection</h3><p>In this experiment, the authorization key and password are obtained to access the API interface of Twitter to obtain Twitter user data. Approximately 40,000 tweets and responses to the Eiffel Tower were collected. In general, text data captured by various tools usually contains a lot of noise data, which needs to be cleaned, through text extraction, noise and duplication removal. Text data pre-processing usually includes ﬁltering, part of speech restoration, stemming extraction, keyword extraction, and syntax analysis [5].</p>
+<h3 id="B-Text-Processing"><a href="#B-Text-Processing" class="headerlink" title="B. Text Processing"></a>B. Text Processing</h3><p><strong>Sentiment analysis:</strong> Sentiment analysis is also called opinion mining. It mainly studies the recognition and discovery of subjective emotional information from text data and conducts an in-depth analysis of sentiment tendency [6]. This paper uses the emotional package in the R language to write the corresponding code to complete the sentiment analysis, and the sentiment analysis can be divided into emotional color analysis and emotional polarity analysis. The emotional color analysis uses a simple Bayesian classiﬁer to classify emotions into eight emotions, such as anticipation, trust, joy, anger, fear, sadness, disgust, surprise. Emotional polarity analysis can divide emotions into three polarities: negative, neutral, and positive [7]. In this study, two emotional analysis approaches were conducted on the Eiffel Tower, and a visual result map was obtained.</p>
+<p><strong>Named entity recognition:</strong> In the text, some entities with special meanings, such as names of people, organization names, and place names. The task of identifying these entities in the text is called ‘named entity recognition’, which is an important sub-task in information extraction [8]. The use of named entity recognition in this paper is mainly to identify the place names in the text, which can be transformed into more reﬁned types, such as cities, states and countries. Used to count the geographical distribution of users who are concerned about the Eiffel Tower.</p>
+<p><strong>Word frequency statistics:</strong> Word frequency statistics can extract the words in the tweet, count according to the frequency of occurrence of the words, and then arrange them in descending order [5]. The steps of word frequency statistics in our experiment: ﬁrstly, the text information is obtained for word segmentation, and the name entity identiﬁcation obtains the unique place name of the tweet; secondly, the results are arranged in descending order according to the length of the word to obtain the result; ﬁnally, programming is performed by R language, correspondingly, the results of the statistics of other place names mentioned by the user are presented in the form of a cloud map.</p>
+<h2 id="IV-RESULT"><a href="#IV-RESULT" class="headerlink" title="IV. RESULT"></a>IV. RESULT</h2><h3 id="A-Sentiment-analysis"><a href="#A-Sentiment-analysis" class="headerlink" title="A. Sentiment analysis"></a>A. Sentiment analysis</h3><p>In this section, it aims to ﬁnd the sentiment from Twitter related to Eiffel Tower. Firstly, we use the lexicon method to ﬁnd the main sentiment. It uses a lexicon which records the words and the sentiment of these words (positive, neural and negative). If it does not ﬁnd the target words in a sentence, it will be recognized to the original sentence. By using this method, it can be seen that most of the sentences are natural and the number of positive sentences is larger than negative sentences. The result of the classiﬁcation could be found in Figure 2 and Figure 3.</p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining2.png" alt="logo"></p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining3.png" alt="logo"></p>
+<p>From the previous section, we can see that the lexicon is an excellent method to analysis sentiment. However, some problems cannot be solved by using this method. For example, it cannot recognize irony sentences. To analyze the results, we use fastText [10], a deep learning classiﬁer, to compare with the lexicon method. The training dataset uses the Stanford twitter dataset [9], which has 1.6 million pre-labeled twitter data. The author choice 400,000 twitter randomly (200,000 positive twitter and 200,000 negative twitter respectively). Also, the test dataset uses some manual label twitter data related to Eiffel tower. After ﬁve epochs, the training accuracy reaches 84.6%, and the test data accuracy is 70.9%. The result could be found in Figure 4.</p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining4.png" alt="logo"></p>
+<p>Comparing with the lexicon method, which accuracy is 89.5% on the test dataset, the accuracy of fastText is lower. It may be because the training dataset is not only related to Eiffel tower, but also have some other information. Therefore, the model is under ﬁtted in some way. Besides, by comparing these two methods, the lexicon method could perform very good.</p>
+<p>In addition, it uses the fastText classify the twitter data into 2 class (positive and negative). There are 56.55% are positive twitter, and 43.45% are negative twitter respectively. Therefore, the most common sentiment of Eiffel Tower is positive. The result can be found in Figure 5.</p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining5.png" alt="logo"></p>
+<h3 id="B-Find-other-place-of-interest-mentioned-by-original-twitter"><a href="#B-Find-other-place-of-interest-mentioned-by-original-twitter" class="headerlink" title="B. Find other place of interest mentioned by original twitter"></a>B. Find other place of interest mentioned by original twitter</h3><p>For the second part of the experiment, we implemented the name entity recognition technique by using the OpenNLP package in R. The keywords obtained through the Twitter API are Colosseum and Eiffel Tower. Sort the collected places by the word frequency and list the top 10 favorite places mentioned by the user. In addition, to facilitate visualization, we generate a word cloud based on word frequency.</p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining6.png" alt="logo"></p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining7.png" alt="logo"></p>
+<p>According to the results in Figure 6 and Figure 7, it is found that the users of the Eiffel Tower mentioned in the tweet will also mention the words Paris and France, because the Eiffel Tower is located in Paris, France. In addition, they will also jointly mention Las Vegas, London, Silicon Valley, Europe, and China. For the Colosseum, users generally mention Rome because the Colosseum is a landmark of Rome. Like the users who mentioned the Eiffel Tower, these users also mentioned Las Vegas and China. In addition to these places, it also included Italy, Caesars Palace, Alabama, Portland, and Venice as show in Figure 8.</p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TextMining8.png" alt="logo"></p>
+<h2 id="V-CONCLUSION"><a href="#V-CONCLUSION" class="headerlink" title="V. CONCLUSION"></a>V. CONCLUSION</h2><p>In this project, we apply social media analysis to tourist attraction like Eiffel Tower and Colosseum by collecting tweets and responses to these attractions. We use two methods, lexicon method and deep learning classiﬁer, to analyze the sentiment of tweet mentioning Eiffel Tower. Both the results of these two methods show that the comment of Eiffel Tower generally is positive while most of the sentiments analyzed by lexicon method are natural. Also, we compare other locations that mention the Eiffel Tower and Colosseum tweets mentioned. The results show that most tweets mentioning these attractions will jointly mention their respective location, besides, we notice that Las Vegas and China are both in the top 10 favourite mentioned places of these tweets.</p>
+<h2 id="REFERENCES"><a href="#REFERENCES" class="headerlink" title="REFERENCES"></a>REFERENCES</h2><p>[1] Pang, B. and Lee, L., 2008. Opinion mining and sentiment analysis.</p>
+<p>Foundations and Trends® in Information Retrieval, 2(1–2), pp.1-135.</p>
+<p>[2] García, A., Gaines, S. and Linaza, M.T., 2012. A lexicon based sentiment analysis retrieval system for tourism domain. Expert Syst Appl Int J, 39(10), pp.9166-9180.</p>
+<p>[3] Meehan, K., Lunney, T., Curran, K. and McCaughey, A., 2013, March. Context-aware intelligent recommendation system for tourism. In 2013 IEEE international conference on pervasive computing and communications workshops (PERCOM workshops) (pp. 328-331). IEEE.</p>
+<p>[4] Joulin, A., Grave, E., Bojanowski, P. and Mikolov, T., 2016. Bag of tricks for efﬁcient text classiﬁcation. arXiv preprint arXiv:1607.01759.</p>
+<p>[5] Hotho, A., Nürnberger, A. and Paaß, G., 2005, May. A brief survey of text mining. In Ldv Forum (Vol. 20, No.1, pp. 19-62).</p>
+<p>[6] Liu, B. and Zhang, L., 2012. A survey of opinion mining and sentiment analysis. In Mining text data (pp.415-463). Springer, Boston, MA.</p>
+<p>[7] Pak, A. and Paroubek, P., 2010, May. Twitter as a corpus for sentiment analysis and opinion mining. In LREc (Vol. 10, No. 2010, pp. 13201326).</p>
+<p>[8] Nadeau, D. and Sekine, S., 2007. A survey of named entity recognition and classiﬁcation. Lingvisticae Investigationes, 30(1), pp.3-26.</p>
+<p>[9] Sentiment140 (2019). For Academics - Sentiment140 - A Twitter Sentiment Analysis Tool. [online] Help.sentiment140.com. Available at: <a href="http://help.sentiment140.com/for-students/" target="_blank" rel="noopener">http://help.sentiment140.com/for-students/</a> [Accessed 28 Mar. 2019].</p>
+<p>[10] Joulin, A., Grave, E., Bojanowski, P. and Mikolov, T. (2016). Bag of Tricks for Efcient Text Classication. [online] Arxiv.org. Available at: <a href="https://arxiv.org/pdf/1607.01759.pdf" target="_blank" rel="noopener">https://arxiv.org/pdf/1607.01759.pdf</a> [Accessed 28 Mar. 2019].</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/15/MachineLearning/" rel="next" title="机器学习论文 - 评估动量参数对逻辑回归算法的影响">
+                <i class="fa fa-chevron-left"></i> 机器学习论文 - 评估动量参数对逻辑回归算法的影响
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Yutong Sun</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">2</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/sunyutong" title="GitHub &rarr; https://github.com/sunyutong" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:s.y.tobytennyson@gmail.com" title="E-Mail &rarr; mailto:s.y.tobytennyson@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://instagram.com/s.y.toby_" title="Instagram &rarr; https://instagram.com/s.y.toby_" rel="noopener" target="_blank"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="/images/myself.jpeg" title="Wechat &rarr; /images/myself.jpeg"><i class="fa fa-fw fa-wechat"></i>Wechat</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-Mining-on-Social-Media-about-Places-of-Interest"><span class="nav-number">1.</span> <span class="nav-text">Text Mining on Social Media about Places of Interest</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I-INTRODUCTION"><span class="nav-number">2.</span> <span class="nav-text">I. INTRODUCTION</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#II-RELATED-WORK"><span class="nav-number">3.</span> <span class="nav-text">II. RELATED WORK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#III-METHODOLOGY"><span class="nav-number">4.</span> <span class="nav-text">III. METHODOLOGY</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Data-Collection"><span class="nav-number">4.1.</span> <span class="nav-text">A. Data Collection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Text-Processing"><span class="nav-number">4.2.</span> <span class="nav-text">B. Text Processing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IV-RESULT"><span class="nav-number">5.</span> <span class="nav-text">IV. RESULT</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-Sentiment-analysis"><span class="nav-number">5.1.</span> <span class="nav-text">A. Sentiment analysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Find-other-place-of-interest-mentioned-by-original-twitter"><span class="nav-number">5.2.</span> <span class="nav-text">B. Find other place of interest mentioned by original twitter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V-CONCLUSION"><span class="nav-number">6.</span> <span class="nav-text">V. CONCLUSION</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#REFERENCES"><span class="nav-number">7.</span> <span class="nav-text">REFERENCES</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yutong Sun</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.2</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">全站共 18.1k 字</span>
+</div>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+
+
+</body>
+</html>
