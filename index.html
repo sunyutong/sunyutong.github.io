@@ -16,7 +16,7 @@
 
 <html class="theme-next pisces use-motion" lang>
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
@@ -162,7 +162,7 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
@@ -173,7 +173,7 @@
     
   
 
-  <div class="container sidebar-position-left 
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
   page-home">
     <div class="headband"></div>
 
@@ -371,7 +371,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-09-24 09:06:32" itemprop="dateModified" datetime="2019-09-24T09:06:32+08:00">2019-09-24</time>
+                <time title="Modified: 2019-10-22 13:54:42" itemprop="dateModified" datetime="2019-10-22T13:54:42+08:00">2019-10-22</time>
               
             
           </span>
@@ -424,8 +424,7 @@
 
       
         
-          <h2 id="域名解析系统DNS-Domain-Name-System"><a href="#域名解析系统DNS-Domain-Name-System" class="headerlink" title="域名解析系统DNS: Domain Name System"></a>域名解析系统DNS: Domain Name System</h2><p>DNS查询报文以UDP形式发出，服务器的默认端口是53，通过查看数据包DNS是<strong>应用层协议</strong>。</p>
-<p>当用户在浏览器地址栏输入URL之后，首先在<strong>浏览器查询缓存</strong>，查询不到则在<strong>host文件</strong>和本地DNS查询。如果没有找到对应的IP地址则到<strong>路由器缓存</strong>中查询，以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程<strong>DNS服务器</strong>发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dns server + url 可以验证DNS的缓存机制）</p>
+          <h1 id="域名解析系统DNS-Domain-Name-System"><a href="#域名解析系统DNS-Domain-Name-System" class="headerlink" title="域名解析系统DNS: Domain Name System"></a>域名解析系统DNS: Domain Name System</h1><p>DNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是<strong>应用层协议</strong>。当用户在浏览器地址栏输入URL之后，首先在<strong>浏览器查询缓存</strong>，查询不到则在<strong>host文件</strong>和本地DNS查询。如果没有找到对应的IP地址则到<strong>路由器缓存</strong>中查询，以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程<strong>DNS服务器</strong>发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dns server + url 可以验证DNS的缓存机制）</p>
 <p>另外DNS也支持TCP访问，为了减轻单台DNS服务器的负载，一台服务器中的内容会传输到其他服务器中进行备份或分布式存储。这是DNS的区域传输就使用TCP进行。</p>
           <!--noindex-->
           
@@ -715,12 +714,24 @@
                 
               
 
-              <time title="Created: 2019-08-15 14:22:12 / Modified: 21:52:09" itemprop="dateCreated datePublished" datetime="2019-08-15T14:22:12+08:00">2019-08-15</time>
+              <time title="Created: 2019-08-15 14:22:12" itemprop="dateCreated datePublished" datetime="2019-08-15T14:22:12+08:00">2019-08-15</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-09-28 11:03:02" itemprop="dateModified" datetime="2019-09-28T11:03:02+08:00">2019-09-28</time>
               
             
           </span>
@@ -2282,7 +2293,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共 20.3k 字</span>
+  <span class="post-count">全站共 21.6k 字</span>
 </div>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -2534,7 +2545,7 @@
 
 
   
-  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 

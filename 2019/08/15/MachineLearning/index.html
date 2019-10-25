@@ -16,7 +16,7 @@
 
 <html class="theme-next pisces use-motion" lang>
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
@@ -118,7 +118,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/P1T2.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/P1T3.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/ROC_Curve.png">
-<meta property="og:updated_time" content="2019-08-15T13:52:09.135Z">
+<meta property="og:updated_time" content="2019-09-28T03:03:02.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习论文 - 评估动量参数对逻辑回归算法的影响">
 <meta name="twitter:description" content="Critically Evaluate the Effects of Momentum in Logistic RegressionAbstract— Logistic regression determines model parameters by using gradient descent of the optimization algorithm, which is also possi">
@@ -177,7 +177,7 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
@@ -188,7 +188,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -366,12 +366,24 @@
                 
               
 
-              <time title="Created: 2019-08-15 14:22:12 / Modified: 21:52:09" itemprop="dateCreated datePublished" datetime="2019-08-15T14:22:12+08:00">2019-08-15</time>
+              <time title="Created: 2019-08-15 14:22:12" itemprop="dateCreated datePublished" datetime="2019-08-15T14:22:12+08:00">2019-08-15</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-09-28 11:03:02" itemprop="dateModified" datetime="2019-09-28T11:03:02+08:00">2019-09-28</time>
               
             
           </span>
@@ -442,7 +454,7 @@
 <p>• Determine the hypothesis function,for general linear classiﬁcation problems. Hypothesis function:</p>
 <script type="math/tex; mode=display">f(x)=W^T*X_b</script><p>$X_b$ means add a column, which all is 1, before the ﬁrst column of the feature matrix for each sample. $W^T$ means weight matrix.</p>
 <p>The value of f(x) belongs to [−∞, +∞], and the probability of belonging to a certain class cannot be given very well. In order to achieve probabilistic prediction, we need a mapping function that can map the result of the classiﬁcation well to the probability between [0, 1], and this function can have good differentiability. Thus, use the Sigmoid function here[1].</p>
-<script type="math/tex; mode=display">f(x)=\frac{1}{1+e^{W^T}*X_b}\to g(Z)=\frac{1}{1+e^-Z}</script><p>The image of Sigmoid function is shown below (Figure 1).</p>
+<script type="math/tex; mode=display">f(x)=\frac{1}{1+e^{-W^T*X}}\to g(Z)=\frac{1}{1+e^{-Z}}</script><p>The image of Sigmoid function is shown below (Figure 1).</p>
 <p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/Sigmoid_Function.png" alt="logo"> </p>
 <p>When z is 0, the probability value is 0.5, assuming z is the classiﬁer, and the classiﬁer result is 0, indicating that that any class is possible. Assume that the data is divided into two classes, which can be divided into class 0 and class 1; when the z value is greater than 0, the probability of sigmoid is greater than 0.5, indicating that it is biased toward class 1; otherwise, it is biased toward class 0.</p>
 <p>• Determine the cost function, the most commonly used is the squared loss function:</p>
@@ -767,7 +779,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共 20.3k 字</span>
+  <span class="post-count">全站共 21.6k 字</span>
 </div>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -1001,7 +1013,7 @@
 
 
   
-  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 

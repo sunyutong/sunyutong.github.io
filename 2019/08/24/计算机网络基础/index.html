@@ -16,7 +16,7 @@
 
 <html class="theme-next pisces use-motion" lang>
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
@@ -101,19 +101,22 @@
 
 
 
-  <meta name="description" content="域名解析系统DNS: Domain Name SystemDNS查询报文以UDP形式发出，服务器的默认端口是53，通过查看数据包DNS是应用层协议。 当用户在浏览器地址栏输入URL之后，首先在浏览器查询缓存，查询不到则在host文件和本地DNS查询。如果没有找到对应的IP地址则到路由器缓存中查询，以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程DNS服务器发出DNS查询报">
+  <meta name="description" content="域名解析系统DNS: Domain Name SystemDNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是应用层协议。当用户在浏览器地址栏输入URL之后，首先在浏览器查询缓存，查询不到则在host文件和本地DNS查询。如果没有找到对应的IP地址则到路由器缓存中查询，以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程DNS服务器发出DNS查询报文。（通过抓包可">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络基础">
 <meta property="og:url" content="https://webstertong.xyz/2019/08/24/计算机网络基础/index.html">
 <meta property="og:site_name" content="Toby的羽绒被窝">
-<meta property="og:description" content="域名解析系统DNS: Domain Name SystemDNS查询报文以UDP形式发出，服务器的默认端口是53，通过查看数据包DNS是应用层协议。 当用户在浏览器地址栏输入URL之后，首先在浏览器查询缓存，查询不到则在host文件和本地DNS查询。如果没有找到对应的IP地址则到路由器缓存中查询，以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程DNS服务器发出DNS查询报">
+<meta property="og:description" content="域名解析系统DNS: Domain Name SystemDNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是应用层协议。当用户在浏览器地址栏输入URL之后，首先在浏览器查询缓存，查询不到则在host文件和本地DNS查询。如果没有找到对应的IP地址则到路由器缓存中查询，以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程DNS服务器发出DNS查询报文。（通过抓包可">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/woshou.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TCP_Reno.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/httpbw.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/http_get_post.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/HTTPS.png">
-<meta property="og:updated_time" content="2019-09-24T01:06:32.873Z">
+<meta property="og:updated_time" content="2019-10-22T05:54:42.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络基础">
-<meta name="twitter:description" content="域名解析系统DNS: Domain Name SystemDNS查询报文以UDP形式发出，服务器的默认端口是53，通过查看数据包DNS是应用层协议。 当用户在浏览器地址栏输入URL之后，首先在浏览器查询缓存，查询不到则在host文件和本地DNS查询。如果没有找到对应的IP地址则到路由器缓存中查询，以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程DNS服务器发出DNS查询报">
+<meta name="twitter:description" content="域名解析系统DNS: Domain Name SystemDNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是应用层协议。当用户在浏览器地址栏输入URL之后，首先在浏览器查询缓存，查询不到则在host文件和本地DNS查询。如果没有找到对应的IP地址则到路由器缓存中查询，以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程DNS服务器发出DNS查询报文。（通过抓包可">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/woshou.png">
 
 
@@ -169,7 +172,7 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
@@ -180,7 +183,7 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -375,7 +378,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-09-24 09:06:32" itemprop="dateModified" datetime="2019-09-24T09:06:32+08:00">2019-09-24</time>
+                <time title="Modified: 2019-10-22 13:54:42" itemprop="dateModified" datetime="2019-10-22T13:54:42+08:00">2019-10-22</time>
               
             
           </span>
@@ -434,8 +437,7 @@
       
 
       
-        <h2 id="域名解析系统DNS-Domain-Name-System"><a href="#域名解析系统DNS-Domain-Name-System" class="headerlink" title="域名解析系统DNS: Domain Name System"></a>域名解析系统DNS: Domain Name System</h2><p>DNS查询报文以UDP形式发出，服务器的默认端口是53，通过查看数据包DNS是<strong>应用层协议</strong>。</p>
-<p>当用户在浏览器地址栏输入URL之后，首先在<strong>浏览器查询缓存</strong>，查询不到则在<strong>host文件</strong>和本地DNS查询。如果没有找到对应的IP地址则到<strong>路由器缓存</strong>中查询，以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程<strong>DNS服务器</strong>发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dns server + url 可以验证DNS的缓存机制）</p>
+        <h1 id="域名解析系统DNS-Domain-Name-System"><a href="#域名解析系统DNS-Domain-Name-System" class="headerlink" title="域名解析系统DNS: Domain Name System"></a>域名解析系统DNS: Domain Name System</h1><p>DNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是<strong>应用层协议</strong>。当用户在浏览器地址栏输入URL之后，首先在<strong>浏览器查询缓存</strong>，查询不到则在<strong>host文件</strong>和本地DNS查询。如果没有找到对应的IP地址则到<strong>路由器缓存</strong>中查询，以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程<strong>DNS服务器</strong>发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dns server + url 可以验证DNS的缓存机制）</p>
 <p>另外DNS也支持TCP访问，为了减轻单台DNS服务器的负载，一台服务器中的内容会传输到其他服务器中进行备份或分布式存储。这是DNS的区域传输就使用TCP进行。</p>
 <a id="more"></a>
 <p><strong>DNS 记录类型：</strong></p>
@@ -443,7 +445,7 @@
 <p>CNAME：将域名解析到别的域名上</p>
 <p>PTR： 反向 DNS，根据 IP 地址指向域名</p>
 <p>MX：用于将邮件地址@后的域名指向邮件服务器</p>
-<h2 id="TCP连接：Transmission-Control-Protocol"><a href="#TCP连接：Transmission-Control-Protocol" class="headerlink" title="TCP连接：Transmission Control Protocol"></a>TCP连接：Transmission Control Protocol</h2><p><strong>三次握手：</strong></p>
+<h1 id="TCP连接：Transmission-Control-Protocol"><a href="#TCP连接：Transmission-Control-Protocol" class="headerlink" title="TCP连接：Transmission Control Protocol"></a>TCP连接：Transmission Control Protocol</h1><p><strong>三次握手：</strong></p>
 <p>​    （1）第一次握手：客户端发送数据包，服务器接收。</p>
 <p>此时，可以得知客户端的发送能力和自己的接收能力均正常</p>
 <p>​    （2）第二次握手：服务器端发送数据包，客户端接收数据包。</p>
@@ -453,12 +455,12 @@
 <p>在三次握手的过程中，第一次和第二次握手不可以携带数据，因为黑客可能会在第一次握手的过程中发送大量内容让服务器接收，导致服务器资源占用影响性能，第三次握手客户端已经知道服务器和自己接收、发送能力均正常因此可以携带数据。</p>
 <p><strong>四次挥手：</strong></p>
 <p>（1）第一次挥手</p>
-<p>因此当主动方发送断开连接的请求（即FIN报文）给被动方时，仅仅代表主动方不会再发送数据报文了，但主动方仍可以接收数据报文。</p>
+<p>当主动方发送断开连接的请求（即FIN报文）给被动方时，仅仅代表主动方不会再发送数据报文了，但主动方仍可以接收数据报文。</p>
 <p>（2）第二次挥手</p>
 <p>被动方此时有可能还有相应的数据报文需要发送，因此需要先发送ACK报文，告知主动方“我知道你想断开连接的请求了”。这样主动方便不会因为没有收到应答而继续发送断开连接的请求（即FIN报文）。</p>
 <p>（3）第三次挥手</p>
 <p>被动方在处理完数据报文后，便发送给主动方FIN报文；这样可以保证数据通信正常可靠地完成。发送完FIN报文后，被动方进入LAST_ACK阶段（超时等待）。</p>
-<p>（4）第四挥手</p>
+<p>（4）第四次挥手</p>
 <p>如果主动方及时发送ACK报文进行连接中断的确认，这时被动方就直接释放连接，进入可用状态</p>
 <p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/woshou.png" alt="loog"></p>
 <p><strong>上图每个状态的含义：</strong></p>
@@ -476,41 +478,78 @@
 <p>Delay ACK 和 Nagle都是为了减少网络中tcp报文的数量。</p>
 <p>流量控制和拥塞控制都是为了控制发送数据量的大小。</p>
 <p>TCP可靠传输是如何保证的：超时重传、确认机制</p>
-<p>TCP 与 UDP都是<strong>传输层协议</strong></p>
-<h2 id="HTTP-HTTPS-Hyper-Text-Transfer-Protocol"><a href="#HTTP-HTTPS-Hyper-Text-Transfer-Protocol" class="headerlink" title="HTTP/HTTPS: Hyper Text Transfer Protocol"></a>HTTP/HTTPS: Hyper Text Transfer Protocol</h2><p><strong>应用层协议</strong></p>
-<p>HTTP是无连接无状态的、一般构建于TCP/IP协议之上。可以分为请求和响应，默认端口号80。 </p>
-<p>无连接是限制每个连接只有一个请求的意思，在服务器处理完客户的请求，并收到客户的反应，即断开。通过这种方式可以节省传输时间。</p>
-<p>HTTP缺点：</p>
+<h4 id="TCP-拥塞控制算法："><a href="#TCP-拥塞控制算法：" class="headerlink" title="TCP 拥塞控制算法："></a>TCP 拥塞控制算法：</h4><p>TCP动态的维护一个拥塞窗口，用来估计在一段时间内这条链路可以承载和运输的数据数量，拥塞窗口的大小取决于网络拥塞程度并动态变化。为了提高 TCP 的效率使拥塞窗口最大化，持续不断的增大拥塞窗口直到发生丢包或时延增加，如果没有丢包和时延增加的现象就继续增大窗口。</p>
+<ol>
+<li><p><strong>Linux 内核默认的Reno算法</strong></p>
+<p>Reno 算法适用于低延时、低带宽的网络，它将拥塞控制的过程分为四阶段：<strong>慢启动、拥塞避免、快重传和快恢复。</strong></p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TCP_Reno.png" alt></p>
+<ul>
+<li><p><strong>慢启动阶段</strong>思路是不要一开始就发送大量的数据，先探测一下网络的拥塞程度，也就是说由小到大逐渐增加拥塞窗口的大小，在没有出现丢包时每收到一个 ACK 就将拥塞窗口大小加一（单位是 MSS，最大单个报文段长度），每轮次发送窗口增加一倍，呈指数增长，若出现丢包，则将拥塞窗口减半，进入拥塞避免阶段；</p>
+</li>
+<li><p>当窗口达到慢启动阈值或出现丢包时，进入<strong>拥塞避免阶段</strong>，窗口每轮次加一，呈线性增长；当收到对一个报文的三个重复的 ACK 时，认为这个报文的下一个报文丢失了，进入<strong>快重传阶段</strong>，要求接收方在收到一个失序的报文段后就立即发出重复确认（为的是使发送方及早知道有报文段没有到达对方，可提高网络吞吐量约20%）而不要等到自己发送数据时捎带确认；</p>
+</li>
+<li><p>快重传完成后进入<strong>快恢复阶段</strong>，将慢启动阈值修改为当前拥塞窗口值的一半，同时拥塞窗口值等于慢启动阈值，然后进入拥塞避免阶段，重复上述过程。</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li><p><strong>Google BBR 算法</strong></p>
+<ul>
+<li><p>BBR 算法不将出现丢包或时延增加作为拥塞的信号，而是认为当网络上的数据包总量大于瓶颈链路带宽和时延的乘积时才出现了拥塞，所以 BBR 也称为基于拥塞的拥塞控制算法（Congestion-Based Congestion Control），其适用网络为高带宽、高时延、有一定丢包率的长肥网络，可以有效降低传输时延，并保证较高的吞吐量</p>
+</li>
+<li><p>BBR 算法周期性地探测网络的容量，交替测量一段时间内的带宽极大值和时延极小值，将其乘积作为作为拥塞窗口大小，使得拥塞窗口始的值始终与网络的容量保持一致。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="TCP流量控制"><a href="#TCP流量控制" class="headerlink" title="TCP流量控制"></a>TCP流量控制</h4><p><strong>滑动窗口</strong></p>
+<p>​        原理：发送方的发送速率不要太快，让接收方来得及接收数据包。通过 TCP 首部的窗口字段调整接收方的发送窗口数值大小。发送方的发送窗口不能超过接收方的接收窗口数值。当接收方发送rwnd=0的报文给发送方时，发送方暂时停止发送数据，并启动持续计时器，当计时器到时发送探测报文，接收方确认后调整rwnd窗口大小，继续发送数据包。</p>
+<p><strong>传输效率</strong></p>
+<p>​        TCP的首部可以容纳二十个字节，如果每次只发送一个字节就封装数据包进行传输，则会导致效率低下。所以要适当调整 TCP 报文的大小。有三种机制：</p>
+<ol>
+<li><p>让 TCP 维持一个变量 MSS （最大报文段长度），当缓存数据达到最大报文段长度时，就数据发送出去。</p>
+</li>
+<li><p>有应用程序指明数据的长度</p>
+</li>
+<li><p>由发送方的计时器控制，时间达到后就发送（长度不能超过 MSS ）</p>
+<p>现在普遍使用的是 Nagle 算法，算法流程大致为：先发送一字节数据包，从发送到接收并返回接收到的确认报文这段时间内，发送方将所有需要发送的数据放大数据缓存中，收到确认报文后再发送数据，一直循环。</p>
+</li>
+</ol>
+<h4 id="TCP-与-UDP-的区别："><a href="#TCP-与-UDP-的区别：" class="headerlink" title="TCP 与 UDP 的区别："></a>TCP 与 UDP 的区别：</h4><p>UDP 用户数据报协议，非连接的协议，不保证可靠交付，不需要维护连接状态，一台服务机可同时向多个客户端传输相同的消息。UDP信息包小只有8个字节，相比于TCP的20字节，额外的开销小。相比于TCP保证数据正确性和数据顺序，UDP可能丢包也不保证数据传输的顺序。</p>
+<p>UDP没有拥塞控制，如果网络出现拥塞不会使源主机的发送速率降低，也没有流量控制。</p>
+<h1 id="HTTP-HTTPS-Hyper-Text-Transfer-Protocol"><a href="#HTTP-HTTPS-Hyper-Text-Transfer-Protocol" class="headerlink" title="HTTP/HTTPS: Hyper Text Transfer Protocol"></a>HTTP/HTTPS: Hyper Text Transfer Protocol</h1><p><strong>应用层协议</strong></p>
+<p>HTTP是无连接无状态的、一般构建于TCP/IP协议之上。可以分为请求和响应，默认端口号80。 无连接是限制每个连接只有一个请求的意思，在服务器处理完客户的请求，并收到客户的反应，即断开。通过这种方式可以节省传输时间。</p>
+<p><strong>HTTP 请求报文和响应报文：</strong></p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/httpbw.png" alt></p>
+<p><strong>GET 与 POST请求的区别：</strong></p>
+<p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/http_get_post.png" alt></p>
+<p><strong>HTTP缺点：</strong></p>
 <ul>
 <li>请求信息明文传输，容易被窃听截取。</li>
 <li>数据的完整性未校验，容易被篡改</li>
 <li>没有验证对方身份，存在冒充危险</li>
 </ul>
-<p>HTTPS:</p>
+<p><strong>HTTP 状态码：</strong></p>
+<p><strong>HTTPS:</strong></p>
 <p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/HTTPS.png" alt="https"></p>
-<p>HTTPS缺点：</p>
+<p><strong>HTTPS缺点：</strong></p>
 <ul>
 <li>HTTPS协议多次握手，导致页面的加载时间延长近50%；</li>
 <li>HTTPS连接缓存不如HTTP高效，会增加数据开销和功耗；</li>
 <li>申请SSL证书需要钱，功能越强大的证书费用越高。</li>
 <li>SSL涉及到的安全算法会消耗 CPU 资源，对服务器资源消耗较大。</li>
 </ul>
-<h2 id="ARP-地址解析协议-：Adress-Resolution-Protocol"><a href="#ARP-地址解析协议-：Adress-Resolution-Protocol" class="headerlink" title="ARP ( 地址解析协议 )：Adress Resolution Protocol"></a>ARP ( 地址解析协议 )：Adress Resolution Protocol</h2><p>用于实现从 IP 地址到 MAC 地址的映射，即询问目标 IP 对应的 MAC 地址。基于分层、包封装考虑 ARP 属于网络层协议。</p>
-<p>ARP 只能帮助主机寻找同网段的 IP 地址，当需要将数据包转发到不同网段的主机，数据包先将其转发给网关此时ARP 协议获得网关的 MAC 地址。</p>
+<h4 id><a href="#" class="headerlink" title=" "></a> </h4><h1 id="ARP-地址解析协议-：Adress-Resolution-Protocol"><a href="#ARP-地址解析协议-：Adress-Resolution-Protocol" class="headerlink" title="ARP ( 地址解析协议 )：Adress Resolution Protocol"></a>ARP ( 地址解析协议 )：Adress Resolution Protocol</h1><p>用于实现从 IP 地址到 MAC 地址的映射，即询问目标 IP 对应的 MAC 地址。基于分层、包封装考虑 ARP 属于网络层协议。ARP 只能帮助主机寻找同网段的 IP 地址，当需要将数据包转发到不同网段的主机，数据包先将其转发给网关此时ARP 协议获得网关的 MAC 地址。</p>
 <p>在获取 MAC 地址的工程中，主机先在网络内广播询问某 IP 地址的主机 MAC 地址是多少，非该 IP 地址的主机不做应答，对应 IP 地址的主机将其 MAC 地址单播回询问方并存储到ARP缓冲区的 ARP 列表</p>
-<p><strong>ARP 攻击：</strong></p>
-<p>由于主机在进行广播之后接收对应 IP 地址的 MAC 地址时，采用的是后到优先原则。所以在局域网中的攻击者可以发送 对应的 IP 地址以及自己的 MAC 地址，从而截获网络中的数据包。</p>
-<h2 id="ICMP（互联网控制消息协议）：Internet-Control-Message-Protocol"><a href="#ICMP（互联网控制消息协议）：Internet-Control-Message-Protocol" class="headerlink" title="ICMP（互联网控制消息协议）：Internet Control Message Protocol"></a>ICMP（互联网控制消息协议）：Internet Control Message Protocol</h2><p>用于TCP/IP 网络中发送控制信息，返回错误信息或者分析路由。</p>
-<p>因为是帮助 IP 协议发送控制信息， IP 属于网络层，ICMP 同样属于网络层协议。</p>
-<h2 id="DHCP-（动态主机设置协议）"><a href="#DHCP-（动态主机设置协议）" class="headerlink" title="DHCP （动态主机设置协议）"></a>DHCP （动态主机设置协议）</h2><p>局域网网络协议、使用 UDP 协议工作。主要用于内部网络或网络服务供应商自动分配 IP 地址给用户。</p>
+<p><strong>ARP 攻击：</strong>由于主机在进行广播之后接收对应 IP 地址的 MAC 地址时，采用的是后到优先原则。所以在局域网中的攻击者可以发送 对应的 IP 地址以及自己的 MAC 地址，从而截获网络中的数据包。</p>
+<h1 id="ICMP（互联网控制消息协议）：Internet-Control-Message-Protocol"><a href="#ICMP（互联网控制消息协议）：Internet-Control-Message-Protocol" class="headerlink" title="ICMP（互联网控制消息协议）：Internet Control Message Protocol"></a>ICMP（互联网控制消息协议）：Internet Control Message Protocol</h1><p>用于TCP/IP 网络中发送控制信息，返回错误信息或者分析路由。因为是帮助 IP 协议发送控制信息， IP 属于网络层，ICMP 同样属于网络层协议。</p>
+<h1 id="DHCP-（动态主机设置协议）"><a href="#DHCP-（动态主机设置协议）" class="headerlink" title="DHCP （动态主机设置协议）"></a>DHCP （动态主机设置协议）</h1><p>局域网网络协议、使用 UDP 协议工作。主要用于内部网络或网络服务供应商自动分配 IP 地址给用户。</p>
 <p>新主机进入网络后，发送广播报文申请 IP 地址信息的租约，并将客户端 MAC 地址和机器名记录在报文中。网络中所有的DHCP 服务器对广播做出响应，从地址池中提取未分配的 IP 地址并将其与 租约有效期、服务器 IP 地址一同写入报文发送到客户端。客户端选择第一个接到的 DHCP 报文，并把这一信息广播到网络中。</p>
-<h2 id="NAT-（地址转换协议）"><a href="#NAT-（地址转换协议）" class="headerlink" title="NAT （地址转换协议）"></a>NAT （地址转换协议）</h2><p>将局域网内部的私有地址转换为可以访问 Internet 的公网 IP。</p>
-<p>一对多的 NAT 表现为一个运营商提供的公网IP，在网络出口的位置NAT将所有的内网网络设备转化为一个公网IP的形式，所有对公网的访问表现为一台主机。</p>
-<h2 id="OSPF-（开放式最短路径优先）"><a href="#OSPF-（开放式最短路径优先）" class="headerlink" title="OSPF （开放式最短路径优先）"></a>OSPF （开放式最短路径优先）</h2><p>内部网关协议用于在自治系统内决策路由。使用Dijkstra提出的最短路径算法。</p>
-<p><em>OSPF</em>通过路由器之间通告网络接口的状态来建立链路状态数据库，生成最短路径树，每个<em>OSPF</em>路由器使用这些最短路径构造路由表。路由器掌握了该区域上所有路由器的链路状态信息，也就等于了解了整个网络的拓扑状况。</p>
-<h2 id="RIP-（路由信息协议）"><a href="#RIP-（路由信息协议）" class="headerlink" title="RIP （路由信息协议）"></a>RIP （路由信息协议）</h2><p>RIP协议基于距离矢量算法（DistanceVectorAlgorithms），使用“跳数”(即metric)来衡量到达目标地址的路由距离。这种协议的路由器只关心自己周围的世界，只与自己相邻的路由器交换信息，范围限制在15跳之内，再远，它就不关心了。</p>
-<h2 id="BGP-（边界网关协议）"><a href="#BGP-（边界网关协议）" class="headerlink" title="BGP （边界网关协议）"></a>BGP （边界网关协议）</h2><p>BGP 边界网关协议（BGP）是运行于 TCP 上的一种自治系统（AS）的路由协议，是唯一能够妥善处理不相关路由域间的多路连接的协议。</p>
-<p>当需要进行数据包的转发时，边界路由协议会帮助选择最佳的自治系统进行数据包的转发。比如，当同时接入了联通、电信、移动三大运营商的网络时，BGP会根据网络情况动态选择最佳的路线。</p>
+<h1 id="NAT-（地址转换协议）"><a href="#NAT-（地址转换协议）" class="headerlink" title="NAT （地址转换协议）"></a>NAT （地址转换协议）</h1><p>将局域网内部的私有地址转换为可以访问 Internet 的公网 IP。一对多的 NAT 表现为一个运营商提供的公网IP，在网络出口的位置NAT将所有的内网网络设备转化为一个公网IP的形式，所有对公网的访问表现为一台主机。</p>
+<h1 id="OSPF-（开放式最短路径优先）"><a href="#OSPF-（开放式最短路径优先）" class="headerlink" title="OSPF （开放式最短路径优先）"></a>OSPF （开放式最短路径优先）</h1><p>内部网关协议用于在自治系统内决策路由。使用Dijkstra提出的最短路径算法。OSPF<em>通过路由器之间通告网络接口的状态来建立链路状态数据库，生成最短路径树，每个</em>OSPF路由器使用这些最短路径构造路由表。路由器掌握了该区域上所有路由器的链路状态信息，也就等于了解了整个网络的拓扑状况。</p>
+<h1 id="RIP-（路由信息协议）"><a href="#RIP-（路由信息协议）" class="headerlink" title="RIP （路由信息协议）"></a>RIP （路由信息协议）</h1><p>RIP协议基于距离矢量算法（DistanceVectorAlgorithms），使用“跳数”(即metric)来衡量到达目标地址的路由距离。这种协议的路由器只关心自己周围的世界，只与自己相邻的路由器交换信息，范围限制在15跳之内，再远，它就不关心了。</p>
+<h1 id="BGP-（边界网关协议）"><a href="#BGP-（边界网关协议）" class="headerlink" title="BGP （边界网关协议）"></a>BGP （边界网关协议）</h1><p>BGP 边界网关协议（BGP）是运行于 TCP 上的一种自治系统（AS）的路由协议，是唯一能够妥善处理不相关路由域间的多路连接的协议。当需要进行数据包的转发时，边界路由协议会帮助选择最佳的自治系统进行数据包的转发。比如，当同时接入了联通、电信、移动三大运营商的网络时，BGP会根据网络情况动态选择最佳的路线。</p>
 
       
     </div>
@@ -729,7 +768,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#域名解析系统DNS-Domain-Name-System"><span class="nav-number">1.</span> <span class="nav-text">域名解析系统DNS: Domain Name System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP连接：Transmission-Control-Protocol"><span class="nav-number">2.</span> <span class="nav-text">TCP连接：Transmission Control Protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-HTTPS-Hyper-Text-Transfer-Protocol"><span class="nav-number">3.</span> <span class="nav-text">HTTP/HTTPS: Hyper Text Transfer Protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARP-地址解析协议-：Adress-Resolution-Protocol"><span class="nav-number">4.</span> <span class="nav-text">ARP ( 地址解析协议 )：Adress Resolution Protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ICMP（互联网控制消息协议）：Internet-Control-Message-Protocol"><span class="nav-number">5.</span> <span class="nav-text">ICMP（互联网控制消息协议）：Internet Control Message Protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DHCP-（动态主机设置协议）"><span class="nav-number">6.</span> <span class="nav-text">DHCP （动态主机设置协议）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NAT-（地址转换协议）"><span class="nav-number">7.</span> <span class="nav-text">NAT （地址转换协议）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OSPF-（开放式最短路径优先）"><span class="nav-number">8.</span> <span class="nav-text">OSPF （开放式最短路径优先）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RIP-（路由信息协议）"><span class="nav-number">9.</span> <span class="nav-text">RIP （路由信息协议）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BGP-（边界网关协议）"><span class="nav-number">10.</span> <span class="nav-text">BGP （边界网关协议）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#域名解析系统DNS-Domain-Name-System"><span class="nav-number">1.</span> <span class="nav-text">域名解析系统DNS: Domain Name System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP连接：Transmission-Control-Protocol"><span class="nav-number">2.</span> <span class="nav-text">TCP连接：Transmission Control Protocol</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-拥塞控制算法："><span class="nav-number">2.0.0.1.</span> <span class="nav-text">TCP 拥塞控制算法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP流量控制"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">TCP流量控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-与-UDP-的区别："><span class="nav-number">2.0.0.3.</span> <span class="nav-text">TCP 与 UDP 的区别：</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-HTTPS-Hyper-Text-Transfer-Protocol"><span class="nav-number">3.</span> <span class="nav-text">HTTP/HTTPS: Hyper Text Transfer Protocol</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">3.0.0.1.</span> <span class="nav-text"> </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ARP-地址解析协议-：Adress-Resolution-Protocol"><span class="nav-number">4.</span> <span class="nav-text">ARP ( 地址解析协议 )：Adress Resolution Protocol</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ICMP（互联网控制消息协议）：Internet-Control-Message-Protocol"><span class="nav-number">5.</span> <span class="nav-text">ICMP（互联网控制消息协议）：Internet Control Message Protocol</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DHCP-（动态主机设置协议）"><span class="nav-number">6.</span> <span class="nav-text">DHCP （动态主机设置协议）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NAT-（地址转换协议）"><span class="nav-number">7.</span> <span class="nav-text">NAT （地址转换协议）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OSPF-（开放式最短路径优先）"><span class="nav-number">8.</span> <span class="nav-text">OSPF （开放式最短路径优先）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RIP-（路由信息协议）"><span class="nav-number">9.</span> <span class="nav-text">RIP （路由信息协议）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BGP-（边界网关协议）"><span class="nav-number">10.</span> <span class="nav-text">BGP （边界网关协议）</span></a></li></div>
             
 
           </div>
@@ -777,7 +816,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共 20.3k 字</span>
+  <span class="post-count">全站共 21.6k 字</span>
 </div>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -1011,7 +1050,7 @@
 
 
   
-  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
