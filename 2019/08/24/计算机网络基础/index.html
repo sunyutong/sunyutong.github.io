@@ -101,22 +101,22 @@
 
 
 
-  <meta name="description" content="域名解析系统DNS: Domain Name SystemDNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是应用层协议。当用户在浏览器地址栏输入URL之后，首先在浏览器查询缓存，查询不到则在host文件和本地DNS查询。如果没有找到对应的IP地址则到路由器缓存中查询，以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程DNS服务器发出DNS查询报文。（通过抓包可">
+  <meta name="description" content="域名解析系统DNS: Domain Name SystemDNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是应用层协议。当用户在浏览器地址栏输入URL之后，首先在浏览器查询缓存，查询不到则在host文件和本地DNS查询。如果以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程DNS服务器发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dn">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络基础">
 <meta property="og:url" content="https://webstertong.xyz/2019/08/24/计算机网络基础/index.html">
 <meta property="og:site_name" content="Toby的羽绒被窝">
-<meta property="og:description" content="域名解析系统DNS: Domain Name SystemDNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是应用层协议。当用户在浏览器地址栏输入URL之后，首先在浏览器查询缓存，查询不到则在host文件和本地DNS查询。如果没有找到对应的IP地址则到路由器缓存中查询，以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程DNS服务器发出DNS查询报文。（通过抓包可">
+<meta property="og:description" content="域名解析系统DNS: Domain Name SystemDNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是应用层协议。当用户在浏览器地址栏输入URL之后，首先在浏览器查询缓存，查询不到则在host文件和本地DNS查询。如果以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程DNS服务器发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dn">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/woshou.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TCP_Reno.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/httpbw.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/http_get_post.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/HTTPS.png">
-<meta property="og:updated_time" content="2019-10-22T05:54:42.000Z">
+<meta property="og:updated_time" content="2020-01-28T09:11:01.734Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络基础">
-<meta name="twitter:description" content="域名解析系统DNS: Domain Name SystemDNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是应用层协议。当用户在浏览器地址栏输入URL之后，首先在浏览器查询缓存，查询不到则在host文件和本地DNS查询。如果没有找到对应的IP地址则到路由器缓存中查询，以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程DNS服务器发出DNS查询报文。（通过抓包可">
+<meta name="twitter:description" content="域名解析系统DNS: Domain Name SystemDNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是应用层协议。当用户在浏览器地址栏输入URL之后，首先在浏览器查询缓存，查询不到则在host文件和本地DNS查询。如果以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程DNS服务器发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dn">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/woshou.png">
 
 
@@ -378,7 +378,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-10-22 13:54:42" itemprop="dateModified" datetime="2019-10-22T13:54:42+08:00">2019-10-22</time>
+                <time title="Modified: 2020-01-28 17:11:01" itemprop="dateModified" datetime="2020-01-28T17:11:01+08:00">2020-01-28</time>
               
             
           </span>
@@ -450,7 +450,7 @@
       
 
       
-        <h1 id="域名解析系统DNS-Domain-Name-System"><a href="#域名解析系统DNS-Domain-Name-System" class="headerlink" title="域名解析系统DNS: Domain Name System"></a>域名解析系统DNS: Domain Name System</h1><p>DNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是<strong>应用层协议</strong>。当用户在浏览器地址栏输入URL之后，首先在<strong>浏览器查询缓存</strong>，查询不到则在<strong>host文件</strong>和本地DNS查询。如果没有找到对应的IP地址则到<strong>路由器缓存</strong>中查询，以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程<strong>DNS服务器</strong>发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dns server + url 可以验证DNS的缓存机制）</p>
+        <h1 id="域名解析系统DNS-Domain-Name-System"><a href="#域名解析系统DNS-Domain-Name-System" class="headerlink" title="域名解析系统DNS: Domain Name System"></a>域名解析系统DNS: Domain Name System</h1><p>DNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是<strong>应用层协议</strong>。当用户在浏览器地址栏输入URL之后，首先在<strong>浏览器查询缓存</strong>，查询不到则在<strong>host文件</strong>和本地DNS查询。如果以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程<strong>DNS服务器</strong>发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dns server + url 可以验证DNS的缓存机制）</p>
 <p>另外DNS也支持TCP访问，为了减轻单台DNS服务器的负载，一台服务器中的内容会传输到其他服务器中进行备份或分布式存储。这是DNS的区域传输就使用TCP进行。</p>
 <a id="more"></a>
 <p><strong>DNS 记录类型：</strong></p>
@@ -459,6 +459,10 @@
 <p>PTR： 反向 DNS，根据 IP 地址指向域名</p>
 <p>MX：用于将邮件地址@后的域名指向邮件服务器</p>
 <h1 id="TCP连接：Transmission-Control-Protocol"><a href="#TCP连接：Transmission-Control-Protocol" class="headerlink" title="TCP连接：Transmission Control Protocol"></a>TCP连接：Transmission Control Protocol</h1><p><strong>三次握手：</strong></p>
+<p>第一次握手：客户端发送SYN报文，并设定初始化序列号ISN，该序列号为随机生成，保证每次TCP连接使用不同的初始序列号防止中间人攻击。此时客户端出于SYN_SEND状态。</p>
+<p>第二次握手：服务器收到客户端的SYN报文后发送SYN+ACK报文进行应答，并发送服务器的初始化序列号，ack的值为客户端初始化序列+1。此时服务器出于SYN_REVD状态，该状态需要等待服务器收到客户端的确认后建立TCP连接，如果超时未收到客户端确认报文则抛弃未完成连接。（可能出现SYN Flood DDoS攻击）</p>
+<p>第三次握手：发送ACK报文并把服务器序列号+1作为确认码发送到服务器，连接完成。此次握手客户端已经可以确认连接建立，因此可以将数据放入到第三次握手的数据包中。</p>
+<p>TCP连接过程中需要<strong>三次</strong>握手的原因是为了保证全双工的正常通信。</p>
 <p>​    （1）第一次握手：客户端发送数据包，服务器接收。</p>
 <p>此时，可以得知客户端的发送能力和自己的接收能力均正常</p>
 <p>​    （2）第二次握手：服务器端发送数据包，客户端接收数据包。</p>
@@ -521,7 +525,7 @@
 <p><strong>传输效率</strong></p>
 <p>​        TCP的首部可以容纳二十个字节，如果每次只发送一个字节就封装数据包进行传输，则会导致效率低下。所以要适当调整 TCP 报文的大小。有三种机制：</p>
 <ol>
-<li><p>让 TCP 维持一个变量 MSS （最大报文段长度），当缓存数据达到最大报文段长度时，就数据发送出去。</p>
+<li><p>让 TCP 维持一个变量 MSS （最大报文段长度），当缓存数据达到最大报文段长度时，就把数据发送出去。</p>
 </li>
 <li><p>有应用程序指明数据的长度</p>
 </li>
@@ -544,6 +548,11 @@
 <li>没有验证对方身份，存在冒充危险</li>
 </ul>
 <p><strong>HTTP 状态码：</strong></p>
+<p>100 - 101 信息性状态码</p>
+<p>200 - 206 成功</p>
+<p>300 - 307 重定向</p>
+<p>400 - 417 客户端错误</p>
+<p>500 - 505 服务器错误</p>
 <p><strong>HTTPS:</strong></p>
 <p><img src="https://raw.githubusercontent.com/sunyutong/markdown-image/master/HTTPS.png" alt="https"></p>
 <p><strong>HTTPS缺点：</strong></p>
@@ -555,7 +564,7 @@
 </ul>
 <h4 id><a href="#" class="headerlink" title=" "></a> </h4><h1 id="ARP-地址解析协议-：Adress-Resolution-Protocol"><a href="#ARP-地址解析协议-：Adress-Resolution-Protocol" class="headerlink" title="ARP ( 地址解析协议 )：Adress Resolution Protocol"></a>ARP ( 地址解析协议 )：Adress Resolution Protocol</h1><p>用于实现从 IP 地址到 MAC 地址的映射，即询问目标 IP 对应的 MAC 地址。基于分层、包封装考虑 ARP 属于网络层协议。ARP 只能帮助主机寻找同网段的 IP 地址，当需要将数据包转发到不同网段的主机，数据包先将其转发给网关此时ARP 协议获得网关的 MAC 地址。</p>
 <p>在获取 MAC 地址的工程中，主机先在网络内广播询问某 IP 地址的主机 MAC 地址是多少，非该 IP 地址的主机不做应答，对应 IP 地址的主机将其 MAC 地址单播回询问方并存储到ARP缓冲区的 ARP 列表</p>
-<p><strong>ARP 攻击：</strong>由于主机在进行广播之后接收对应 IP 地址的 MAC 地址时，采用的是后到优先原则。所以在局域网中的攻击者可以发送 对应的 IP 地址以及自己的 MAC 地址，从而截获网络中的数据包。</p>
+<p><strong>ARP 攻击：</strong>由于主机在进行广播之后接收对应 IP 地址的 MAC 地址时，采用的是后到优先原则。所以在局域网中的攻击者可以发送对应的 IP 地址以及自己的 MAC 地址，从而截获网络中的数据包。</p>
 <h1 id="ICMP（互联网控制消息协议）：Internet-Control-Message-Protocol"><a href="#ICMP（互联网控制消息协议）：Internet-Control-Message-Protocol" class="headerlink" title="ICMP（互联网控制消息协议）：Internet Control Message Protocol"></a>ICMP（互联网控制消息协议）：Internet Control Message Protocol</h1><p>用于TCP/IP 网络中发送控制信息，返回错误信息或者分析路由。因为是帮助 IP 协议发送控制信息， IP 属于网络层，ICMP 同样属于网络层协议。</p>
 <h1 id="DHCP-（动态主机设置协议）"><a href="#DHCP-（动态主机设置协议）" class="headerlink" title="DHCP （动态主机设置协议）"></a>DHCP （动态主机设置协议）</h1><p>局域网网络协议、使用 UDP 协议工作。主要用于内部网络或网络服务供应商自动分配 IP 地址给用户。</p>
 <p>新主机进入网络后，发送广播报文申请 IP 地址信息的租约，并将客户端 MAC 地址和机器名记录在报文中。网络中所有的DHCP 服务器对广播做出响应，从地址池中提取未分配的 IP 地址并将其与 租约有效期、服务器 IP 地址一同写入报文发送到客户端。客户端选择第一个接到的 DHCP 报文，并把这一信息广播到网络中。</p>
@@ -806,7 +815,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -833,7 +842,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共 21.6k 字</span>
+  <span class="post-count">全站共 21.9k 字</span>
 </div>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
