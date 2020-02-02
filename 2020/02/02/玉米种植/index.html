@@ -101,17 +101,22 @@
 
 
 
-  <meta name="description" content="线性判别分析是监督学习算法，他与主成分分析法的不同之处在于，它主要用于处理提供了类别标签的数据。主成分分析法的缺陷是无监督学习会导致原本线性可分的数据投影到低维空间之后，不同数据类型混杂在一起，变为数据不可分的数据集。而线性判别分析法通过将类间散度最大化，同时最小化类内散度，将映射后的数据依然保留良好的分离度。本节我们介绍根据类间散度矩阵和类内散度矩阵实现维度缩减的方法 ——线性判别分析（Line">
+  <meta name="description" content="玉米的种植玉米属于一年生高大草本植物。原产中美和南美洲是重要的粮食作物。玉米营养成分全面，富含优质碳水化合物、维生素和微量元素，同时蛋白质含量较高食用后饱腹感强，因此是世界重要的粮食作物。 ) 在农业生产中有一个名词叫做“源库关系”。简单的理解玉米穗是库，玉米的根系和叶片是源。玉米叶片合成的有机物以及根系吸收的肥水形成了源，向玉米穗部供应形成果实。源能够充分的满足库，玉米的穗部籽粒就会饱满、充实；">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性判别分析 LDA">
-<meta property="og:url" content="https://webstertong.xyz/2019/06/22/线性判别分析/index.html">
+<meta property="og:title" content="玉米种植">
+<meta property="og:url" content="https://webstertong.xyz/2020/02/02/玉米种植/index.html">
 <meta property="og:site_name" content="Toby的羽绒被窝">
-<meta property="og:description" content="线性判别分析是监督学习算法，他与主成分分析法的不同之处在于，它主要用于处理提供了类别标签的数据。主成分分析法的缺陷是无监督学习会导致原本线性可分的数据投影到低维空间之后，不同数据类型混杂在一起，变为数据不可分的数据集。而线性判别分析法通过将类间散度最大化，同时最小化类内散度，将映射后的数据依然保留良好的分离度。本节我们介绍根据类间散度矩阵和类内散度矩阵实现维度缩减的方法 ——线性判别分析（Line">
+<meta property="og:description" content="玉米的种植玉米属于一年生高大草本植物。原产中美和南美洲是重要的粮食作物。玉米营养成分全面，富含优质碳水化合物、维生素和微量元素，同时蛋白质含量较高食用后饱腹感强，因此是世界重要的粮食作物。 ) 在农业生产中有一个名词叫做“源库关系”。简单的理解玉米穗是库，玉米的根系和叶片是源。玉米叶片合成的有机物以及根系吸收的肥水形成了源，向玉米穗部供应形成果实。源能够充分的满足库，玉米的穗部籽粒就会饱满、充实；">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-15T13:30:11.000Z">
+<meta property="og:image" content="https://webstertong.xyz/2020/02/02/玉米种植/[https://github.com/sunyutong/markdown-image/blob/master/%E7%8E%89%E7%B1%B3.png](https://github.com/sunyutong/markdown-image/blob/master/玉米.png">
+<meta property="og:image" content="https://webstertong.xyz/2020/02/02/玉米种植/[https://raw.githubusercontent.com/sunyutong/markdown-image/master/%E7%8E%89%E7%B1%B3%E4%BA%A7%E9%87%8F.png](https://raw.githubusercontent.com/sunyutong/markdown-image/master/玉米产量.png">
+<meta property="og:image" content="https://webstertong.xyz/2020/02/02/玉米种植/[https://raw.githubusercontent.com/sunyutong/markdown-image/master/%E6%B7%B1%E5%BA%A6.png](https://raw.githubusercontent.com/sunyutong/markdown-image/master/深度.png">
+<meta property="og:image" content="https://webstertong.xyz/2020/02/02/玉米种植/[https://raw.githubusercontent.com/sunyutong/markdown-image/master/%E7%A7%8D%E6%A4%8D%E6%8A%80%E5%B7%A7.png](https://raw.githubusercontent.com/sunyutong/markdown-image/master/种植技巧.png">
+<meta property="og:updated_time" content="2020-02-02T13:53:04.489Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线性判别分析 LDA">
-<meta name="twitter:description" content="线性判别分析是监督学习算法，他与主成分分析法的不同之处在于，它主要用于处理提供了类别标签的数据。主成分分析法的缺陷是无监督学习会导致原本线性可分的数据投影到低维空间之后，不同数据类型混杂在一起，变为数据不可分的数据集。而线性判别分析法通过将类间散度最大化，同时最小化类内散度，将映射后的数据依然保留良好的分离度。本节我们介绍根据类间散度矩阵和类内散度矩阵实现维度缩减的方法 ——线性判别分析（Line">
+<meta name="twitter:title" content="玉米种植">
+<meta name="twitter:description" content="玉米的种植玉米属于一年生高大草本植物。原产中美和南美洲是重要的粮食作物。玉米营养成分全面，富含优质碳水化合物、维生素和微量元素，同时蛋白质含量较高食用后饱腹感强，因此是世界重要的粮食作物。 ) 在农业生产中有一个名词叫做“源库关系”。简单的理解玉米穗是库，玉米的根系和叶片是源。玉米叶片合成的有机物以及根系吸收的肥水形成了源，向玉米穗部供应形成果实。源能够充分的满足库，玉米的穗部籽粒就会饱满、充实；">
+<meta name="twitter:image" content="https://webstertong.xyz/2020/02/02/玉米种植/[https://github.com/sunyutong/markdown-image/blob/master/%E7%8E%89%E7%B1%B3.png](https://github.com/sunyutong/markdown-image/blob/master/玉米.png">
 
 
 
@@ -119,7 +124,7 @@
 
   
   
-  <link rel="canonical" href="https://webstertong.xyz/2019/06/22/线性判别分析/">
+  <link rel="canonical" href="https://webstertong.xyz/2020/02/02/玉米种植/">
 
 
 
@@ -129,7 +134,7 @@
   };
 </script>
 
-  <title>线性判别分析 LDA | Toby的羽绒被窝</title>
+  <title>玉米种植 | Toby的羽绒被窝</title>
   
 
 
@@ -312,7 +317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://webstertong.xyz/2019/06/22/线性判别分析/">
+    <link itemprop="mainEntityOfPage" href="https://webstertong.xyz/2020/02/02/玉米种植/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yutong Sun">
@@ -329,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">线性判别分析 LDA
+          <h1 class="post-title" itemprop="name headline">玉米种植
 
               
             
@@ -355,24 +360,12 @@
                 
               
 
-              <time title="Created: 2019-06-22 18:20:19" itemprop="dateCreated datePublished" datetime="2019-06-22T18:20:19+08:00">2019-06-22</time>
+              <time title="Created: 2020-02-02 21:20:19 / Modified: 21:53:04" itemprop="dateCreated datePublished" datetime="2020-02-02T21:20:19+08:00">2020-02-02</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-08-15 21:30:11" itemprop="dateModified" datetime="2019-08-15T21:30:11+08:00">2019-08-15</time>
               
             
           </span>
@@ -408,8 +401,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2019/06/22/线性判别分析/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/22/线性判别分析/" itemprop="commentCount"></span>
+                <a href="/2020/02/02/玉米种植/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/02/玉米种植/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -444,18 +437,29 @@
       
 
       
-        <p>线性判别分析是监督学习算法，他与主成分分析法的不同之处在于，它主要用于处理提供了类别标签的数据。主成分分析法的缺陷是无监督学习会导致原本线性可分的数据投影到低维空间之后，不同数据类型混杂在一起，变为数据不可分的数据集。而线性判别分析法通过将类间散度最大化，同时最小化类内散度，将映射后的数据依然保留良好的分离度。本节我们介绍根据类间散度矩阵和类内散度矩阵实现维度缩减的方法 ——线性判别分析（Linear Discriminant Analysis, LDA）</p>
-<p>因为线性判别分析处理的是有分类数据，所以它在降维的过程中要尽量将不同类型的数据在映射后的低维空间依然能展现出良好的分离度。所以我们优化的目标就是让类与类之间的距离尽可能大，让同类数据之间的距离尽可能小。我们首先定义类间散度矩阵，它的大小显示出不同类别之间的距离。但由于对于2分类的数据与多分类的数据类内散度矩阵和类间散度矩阵的表示方式是不同的，所以我们分别对其进行定义。</p>
+        <h1 id="玉米的种植"><a href="#玉米的种植" class="headerlink" title="玉米的种植"></a>玉米的种植</h1><p>玉米属于一年生高大草本植物。原产中美和南美洲是重要的粮食作物。玉米营养成分全面，富含优质碳水化合物、维生素和微量元素，同时蛋白质含量较高食用后饱腹感强，因此是世界重要的粮食作物。</p>
+<p><img src="[https://github.com/sunyutong/markdown-image/blob/master/%E7%8E%89%E7%B1%B3.png](https://github.com/sunyutong/markdown-image/blob/master/玉米.png" alt="image-20200202193230685">)</p>
+<p>在农业生产中有一个名词叫做“源库关系”。简单的理解玉米穗是库，玉米的根系和叶片是源。玉米叶片合成的有机物以及根系吸收的肥水形成了源，向玉米穗部供应形成果实。源能够充分的满足库，玉米的穗部籽粒就会饱满、充实；如果源不能满足库，就会出现凸尖、瘪粒、空粒以及籽粒饱满度变差等情况的发生。</p>
+<p>从玉米的生理特性来讲，多穗型也就是多个玉米棒子的植株，这样的品种是不符合稳产、高产的生理需求。一般一株玉米可以结一至八个玉米棒子，但通常源是很难满足库的需求，人们在种植玉米的过程中会摘除一些玉米穗保留1-2个玉米棒子，以保证玉米棒长得更大、玉米粒更饱满。</p>
 <a id="more"></a>
-<p>二分类数据：$S_b = (\mu_0 - \mu_1)(\mu_0 - \mu_1)^T$</p>
-<p>多分类数据：$S_b = \sum ^C _{i=1} N_i(\mu_i-\mu)(\mu_i-\mu)^T$ 其中 $\mu$ 为所有类的均值 $\mu =\frac{1}{N} \sum x$</p>
-<p>对于类内散度矩阵我们定义：</p>
-<p>二分类数据：$S_w = \sum^2_{i=1}\sum_{x\in W_i}(x-\mu_i)(x-\mu_i)^T$ 其中$\mu_i = \frac{1}{N_i} \sum_{x\in W_i}x$</p>
-<p>多分类数据：$S_w = \sum^C_{i=1}\sum_{x\in W_i}(x - \mu_i)(x - \mu_i)^T$</p>
-<p>为了将不同类型的数据在映射之后的维度空间尽可能分隔开，我们只需要将 $S_b$ 尽可能大，$S_w$ 尽可能小即可。所以优化函数可以定义为：</p>
-<p>​                                                    $J = \frac{W^TS_bW}{W^TS_wW}$  (W为映射矩阵)</p>
-<p>通过对J求导可以得到，对于二分类数据 $S^{-1}_W(\mu_0-\mu_1)$时，J可以取到最大值。对于多分类数据，W映射矩阵由C-1个向量组成，其中第k个向量是$S^{-1}_WS_b$的第k个特征向量。所以在多分类问题中，线性判别分析的一个缺陷是它只能将高维数据降到C-1维或者更低维度。其中C为原始数据的类型数量。</p>
-<p>最后使用得到的映射矩阵，可以将原始数据映射到低维空间，并保证了低维空间中的数据依然保留了原始数据的最大分离度。</p>
+<h3 id="玉米的产量"><a href="#玉米的产量" class="headerlink" title="玉米的产量"></a>玉米的产量</h3><p>每个420平方米的标准篮球场，可以种植2000多株玉米，这个篮球场每年就可以收获大约3000个玉米棒子。根据联合国粮农组织的数据，2017年中国玉米产量2亿6千万吨（是香蕉产量的20倍），这包括用于制作玉米面粉、玉米油、罐头和我们市面上见到的玉米。</p>
+<p><img src="[https://raw.githubusercontent.com/sunyutong/markdown-image/master/%E7%8E%89%E7%B1%B3%E4%BA%A7%E9%87%8F.png](https://raw.githubusercontent.com/sunyutong/markdown-image/master/玉米产量.png" alt="image-20200202200501392">)</p>
+<h3 id="如此高产的作物是如何种植的呢？"><a href="#如此高产的作物是如何种植的呢？" class="headerlink" title="如此高产的作物是如何种植的呢？"></a>如此高产的作物是如何种植的呢？</h3><p><strong>品种选择</strong></p>
+<p>如何选好玉米良种，是关系到秋季产量增收的关键问题。常见的选择依据包括当地热量资源条件，日照时间充足，平均温度较高，就尽量选择生长期较长的玉米品种，使优良品种的玉米生长潜力得到充分发挥。</p>
+<p>优先选择纯度高的玉米品种。玉米品种纯度的高低和质量的好坏直接影响玉米的产量。对于玉米种子纯度每下降1%，产量就会下降0.61%。选用高质量高纯度品种的种子是玉米高产的有利保证。</p>
+<p>此外，在选种过程中还需要考虑当地的降水、土地肥沃程度、病虫害等因素。</p>
+<p><strong>种植技巧</strong></p>
+<ol>
+<li>玉米很难容忍霜冻和寒冷的气候条件，在低于16ºC的环境下是无法种植玉米的。如果外面气候温暖可以在室外进行播种，最安全的播种方法是在温室、暖房的室内进行播种。将种子播种在1.5-2.5英寸（5厘米）深的有机土壤中，过深或过浅播种玉米种子都不利于玉米幼苗的发芽和生长。</li>
+</ol>
+<p><img src="[https://raw.githubusercontent.com/sunyutong/markdown-image/master/%E6%B7%B1%E5%BA%A6.png](https://raw.githubusercontent.com/sunyutong/markdown-image/master/深度.png" alt="image-20200202213446808">)</p>
+<ol>
+<li><p>大约经过一周左右的时间，待幼株长到6英寸 15厘米左右高时，准备将它们种植到室外，小心的将幼苗一株一株分开，并将其播种到温暖的室外土壤中，在移植的过程中要保证玉米植株间距不低于45厘米，深度同样保持在2-2.25英寸之间，相同的深度可以让植株平等的竞争土壤资源。尽管玉米是十分耐旱的作物，但在极端干燥炎热的环境下，要一周浇水一次保证土壤湿润。</p>
+<p><img src="[https://raw.githubusercontent.com/sunyutong/markdown-image/master/%E7%A7%8D%E6%A4%8D%E6%8A%80%E5%B7%A7.png](https://raw.githubusercontent.com/sunyutong/markdown-image/master/种植技巧.png" alt="image-20200202213533488">)</p>
+</li>
+<li><p>夏末时期，玉米的流苏和穗轴开始形成。大约经过六周的时间，末尾的流苏变成黑褐色，玉米粒中饱含汁水时，玉米棒就可以采摘了。</p>
+</li>
+</ol>
 
       
     </div>
@@ -486,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/22/主成分分析法PCA/" rel="next" title="主成分分析法PCA">
-                <i class="fa fa-chevron-left"></i> 主成分分析法PCA
+              <a href="/2019/08/24/计算机网络基础/" rel="next" title="计算机网络基础">
+                <i class="fa fa-chevron-left"></i> 计算机网络基础
               </a>
             
           </div>
@@ -495,10 +499,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/29/人类简史/" rel="prev" title="人类简史 - 读书笔记">
-                人类简史 - 读书笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -546,8 +546,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -662,6 +671,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#玉米的种植"><span class="nav-number">1.</span> <span class="nav-text">玉米的种植</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#玉米的产量"><span class="nav-number">1.0.1.</span> <span class="nav-text">玉米的产量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如此高产的作物是如何种植的呢？"><span class="nav-number">1.0.2.</span> <span class="nav-text">如此高产的作物是如何种植的呢？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
