@@ -101,22 +101,22 @@
 
 
 
-  <meta name="description" content="域名解析系统DNS: Domain Name SystemDNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是应用层协议。当用户在浏览器地址栏输入URL之后，首先在浏览器查询缓存，查询不到则在host文件和本地DNS查询。如果以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程DNS服务器发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dn">
+  <meta name="description" content="TCP/IP 与 OSI 协议模型 TCP/IP 中各层对应的协议 MAC 地址： 长度为48位（6字节），通常为12个16进制数。前6位为网络硬件制造商的编号，后六位为制造商所制造的网络产品或网卡的系列号 IPv4私有IP地址 - 不出现在公网中 10.0.0.0 - 10.255.255.255 172.16.0.0 - 172.31.255.255 192.168.0.0 - 192.168">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络基础">
 <meta property="og:url" content="https://webstertong.xyz/2019/08/24/计算机网络基础/index.html">
 <meta property="og:site_name" content="Toby的羽绒被窝">
-<meta property="og:description" content="域名解析系统DNS: Domain Name SystemDNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是应用层协议。当用户在浏览器地址栏输入URL之后，首先在浏览器查询缓存，查询不到则在host文件和本地DNS查询。如果以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程DNS服务器发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dn">
+<meta property="og:description" content="TCP/IP 与 OSI 协议模型 TCP/IP 中各层对应的协议 MAC 地址： 长度为48位（6字节），通常为12个16进制数。前6位为网络硬件制造商的编号，后六位为制造商所制造的网络产品或网卡的系列号 IPv4私有IP地址 - 不出现在公网中 10.0.0.0 - 10.255.255.255 172.16.0.0 - 172.31.255.255 192.168.0.0 - 192.168">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/woshou.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/TCP_Reno.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/httpbw.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/http_get_post.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/HTTPS.png">
-<meta property="og:updated_time" content="2020-01-28T09:11:01.734Z">
+<meta property="og:updated_time" content="2020-02-13T01:58:38.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络基础">
-<meta name="twitter:description" content="域名解析系统DNS: Domain Name SystemDNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是应用层协议。当用户在浏览器地址栏输入URL之后，首先在浏览器查询缓存，查询不到则在host文件和本地DNS查询。如果以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程DNS服务器发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dn">
+<meta name="twitter:description" content="TCP/IP 与 OSI 协议模型 TCP/IP 中各层对应的协议 MAC 地址： 长度为48位（6字节），通常为12个16进制数。前6位为网络硬件制造商的编号，后六位为制造商所制造的网络产品或网卡的系列号 IPv4私有IP地址 - 不出现在公网中 10.0.0.0 - 10.255.255.255 172.16.0.0 - 172.31.255.255 192.168.0.0 - 192.168">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/sunyutong/markdown-image/master/woshou.png">
 
 
@@ -378,7 +378,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-01-28 17:11:01" itemprop="dateModified" datetime="2020-01-28T17:11:01+08:00">2020-01-28</time>
+                <time title="Modified: 2020-02-13 09:58:38" itemprop="dateModified" datetime="2020-02-13T09:58:38+08:00">2020-02-13</time>
               
             
           </span>
@@ -450,7 +450,20 @@
       
 
       
-        <h1 id="域名解析系统DNS-Domain-Name-System"><a href="#域名解析系统DNS-Domain-Name-System" class="headerlink" title="域名解析系统DNS: Domain Name System"></a>域名解析系统DNS: Domain Name System</h1><p>DNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是<strong>应用层协议</strong>。当用户在浏览器地址栏输入URL之后，首先在<strong>浏览器查询缓存</strong>，查询不到则在<strong>host文件</strong>和本地DNS查询。如果以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程<strong>DNS服务器</strong>发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dns server + url 可以验证DNS的缓存机制）</p>
+        <p>TCP/IP 与 OSI 协议模型</p>
+<p>TCP/IP 中各层对应的协议</p>
+<p>MAC 地址： 长度为48位（6字节），通常为12个16进制数。前6位为网络硬件制造商的编号，后六位为制造商所制造的网络产品或网卡的系列号</p>
+<h4 id="IPv4"><a href="#IPv4" class="headerlink" title="IPv4"></a>IPv4</h4><p>私有IP地址 - 不出现在公网中</p>
+<p>10.0.0.0 - 10.255.255.255</p>
+<p>172.16.0.0 - 172.31.255.255</p>
+<p>192.168.0.0 - 192.168.255.255</p>
+<p>保留IP地址：</p>
+<p>169.254.0.0 - 169.254.255.255</p>
+<p>计算机无法通过DHCP获取IP地址时，使用临时保留IP地址</p>
+<h4 id="路由与交换"><a href="#路由与交换" class="headerlink" title="路由与交换"></a>路由与交换</h4><p>缺省路由</p>
+<p>策略路由</p>
+<p>ACL</p>
+<h4 id="IPv6、天窗问题"><a href="#IPv6、天窗问题" class="headerlink" title="IPv6、天窗问题"></a>IPv6、天窗问题</h4><h1 id="域名解析系统DNS-Domain-Name-System"><a href="#域名解析系统DNS-Domain-Name-System" class="headerlink" title="域名解析系统DNS: Domain Name System"></a>域名解析系统DNS: Domain Name System</h1><p>DNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是<strong>应用层协议</strong>。当用户在浏览器地址栏输入URL之后，首先在<strong>浏览器查询缓存</strong>，查询不到则在<strong>host文件</strong>和本地DNS查询。如果以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程<strong>DNS服务器</strong>发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dns server + url 可以验证DNS的缓存机制）</p>
 <p>另外DNS也支持TCP访问，为了减轻单台DNS服务器的负载，一台服务器中的内容会传输到其他服务器中进行备份或分布式存储。这是DNS的区域传输就使用TCP进行。</p>
 <a id="more"></a>
 <p><strong>DNS 记录类型：</strong></p>
@@ -458,6 +471,8 @@
 <p>CNAME：将域名解析到别的域名上</p>
 <p>PTR： 反向 DNS，根据 IP 地址指向域名</p>
 <p>MX：用于将邮件地址@后的域名指向邮件服务器</p>
+<p>迭代查询：</p>
+<p>递归查询：</p>
 <h1 id="TCP连接：Transmission-Control-Protocol"><a href="#TCP连接：Transmission-Control-Protocol" class="headerlink" title="TCP连接：Transmission Control Protocol"></a>TCP连接：Transmission Control Protocol</h1><p><strong>三次握手：</strong></p>
 <p>第一次握手：客户端发送SYN报文，并设定初始化序列号ISN，该序列号为随机生成，保证每次TCP连接使用不同的初始序列号防止中间人攻击。此时客户端出于SYN_SEND状态。</p>
 <p>第二次握手：服务器收到客户端的SYN报文后发送SYN+ACK报文进行应答，并发送服务器的初始化序列号，ack的值为客户端初始化序列+1。此时服务器出于SYN_REVD状态，该状态需要等待服务器收到客户端的确认后建立TCP连接，如果超时未收到客户端确认报文则抛弃未完成连接。（可能出现SYN Flood DDoS攻击）</p>
@@ -565,13 +580,38 @@
 <h4 id><a href="#" class="headerlink" title=" "></a> </h4><h1 id="ARP-地址解析协议-：Adress-Resolution-Protocol"><a href="#ARP-地址解析协议-：Adress-Resolution-Protocol" class="headerlink" title="ARP ( 地址解析协议 )：Adress Resolution Protocol"></a>ARP ( 地址解析协议 )：Adress Resolution Protocol</h1><p>用于实现从 IP 地址到 MAC 地址的映射，即询问目标 IP 对应的 MAC 地址。基于分层、包封装考虑 ARP 属于网络层协议。ARP 只能帮助主机寻找同网段的 IP 地址，当需要将数据包转发到不同网段的主机，数据包先将其转发给网关此时ARP 协议获得网关的 MAC 地址。</p>
 <p>在获取 MAC 地址的工程中，主机先在网络内广播询问某 IP 地址的主机 MAC 地址是多少，非该 IP 地址的主机不做应答，对应 IP 地址的主机将其 MAC 地址单播回询问方并存储到ARP缓冲区的 ARP 列表</p>
 <p><strong>ARP 攻击：</strong>由于主机在进行广播之后接收对应 IP 地址的 MAC 地址时，采用的是后到优先原则。所以在局域网中的攻击者可以发送对应的 IP 地址以及自己的 MAC 地址，从而截获网络中的数据包。</p>
+<p>主机在每次发送数据报文之前，都会先在ARP表中查找目的IP地址所对应的MAC地址。</p>
+<p>动态ARP：由ARP协议通过ARP报文自动生成和维护，可以被新的动态ARP更新，也可以被静态ARP覆盖。</p>
+<p>静态ARP：ARP表项由网络管理员手工配置生成和维护，不会被老化，也不会被动态ARP表项覆盖。</p>
+<p>ARP缓存表中没有对应的MAC地址时，主机广播发送ARP请求报文，请求母的主机的MAC地址，有对应的MAC地址则直接使用。</p>
+<p>当目的IP地址与所在主机处于不同的两个网络中，发送主机通过查找转发表得到下一跳路由器节点的IP地址，对该IP地址执行ARP过程，然后发送数据，依次过程一直执行到，目的IP地址与与目的主机出于统一网络。</p>
 <h1 id="ICMP（互联网控制消息协议）：Internet-Control-Message-Protocol"><a href="#ICMP（互联网控制消息协议）：Internet-Control-Message-Protocol" class="headerlink" title="ICMP（互联网控制消息协议）：Internet Control Message Protocol"></a>ICMP（互联网控制消息协议）：Internet Control Message Protocol</h1><p>用于TCP/IP 网络中发送控制信息，返回错误信息或者分析路由。因为是帮助 IP 协议发送控制信息， IP 属于网络层，ICMP 同样属于网络层协议。</p>
 <h1 id="DHCP-（动态主机设置协议）"><a href="#DHCP-（动态主机设置协议）" class="headerlink" title="DHCP （动态主机设置协议）"></a>DHCP （动态主机设置协议）</h1><p>局域网网络协议、使用 UDP 协议工作。主要用于内部网络或网络服务供应商自动分配 IP 地址给用户。</p>
 <p>新主机进入网络后，发送广播报文申请 IP 地址信息的租约，并将客户端 MAC 地址和机器名记录在报文中。网络中所有的DHCP 服务器对广播做出响应，从地址池中提取未分配的 IP 地址并将其与 租约有效期、服务器 IP 地址一同写入报文发送到客户端。客户端选择第一个接到的 DHCP 报文，并把这一信息广播到网络中。</p>
 <h1 id="NAT-（地址转换协议）"><a href="#NAT-（地址转换协议）" class="headerlink" title="NAT （地址转换协议）"></a>NAT （地址转换协议）</h1><p>将局域网内部的私有地址转换为可以访问 Internet 的公网 IP。一对多的 NAT 表现为一个运营商提供的公网IP，在网络出口的位置NAT将所有的内网网络设备转化为一个公网IP的形式，所有对公网的访问表现为一台主机。</p>
+<p>解决IPv4地址短缺的问题，局域网内的主机共用一个公网IP地址。</p>
 <h1 id="OSPF-（开放式最短路径优先）"><a href="#OSPF-（开放式最短路径优先）" class="headerlink" title="OSPF （开放式最短路径优先）"></a>OSPF （开放式最短路径优先）</h1><p>内部网关协议用于在自治系统内决策路由。使用Dijkstra提出的最短路径算法。OSPF<em>通过路由器之间通告网络接口的状态来建立链路状态数据库，生成最短路径树，每个</em>OSPF路由器使用这些最短路径构造路由表。路由器掌握了该区域上所有路由器的链路状态信息，也就等于了解了整个网络的拓扑状况。</p>
-<h1 id="RIP-（路由信息协议）"><a href="#RIP-（路由信息协议）" class="headerlink" title="RIP （路由信息协议）"></a>RIP （路由信息协议）</h1><p>RIP协议基于距离矢量算法（DistanceVectorAlgorithms），使用“跳数”(即metric)来衡量到达目标地址的路由距离。这种协议的路由器只关心自己周围的世界，只与自己相邻的路由器交换信息，范围限制在15跳之内，再远，它就不关心了。</p>
+<h1 id="RIP-（路由信息协议）"><a href="#RIP-（路由信息协议）" class="headerlink" title="RIP （路由信息协议）"></a>RIP （路由信息协议）</h1><p>RIP协议基于距离矢量算法（DistanceVectorAlgorithms），使用“跳数”(即metric)来衡量到达目标地址的路由距离。这种协议的路由器只关心自己周围的世界，只与自己相邻的路由器交换信息，范围限制在15跳之内，再远，它就不关心了。因此只适用于中小网络。</p>
 <h1 id="BGP-（边界网关协议）"><a href="#BGP-（边界网关协议）" class="headerlink" title="BGP （边界网关协议）"></a>BGP （边界网关协议）</h1><p>BGP 边界网关协议（BGP）是运行于 TCP 上的一种自治系统（AS）的路由协议，是唯一能够妥善处理不相关路由域间的多路连接的协议。当需要进行数据包的转发时，边界路由协议会帮助选择最佳的自治系统进行数据包的转发。比如，当同时接入了联通、电信、移动三大运营商的网络时，BGP会根据网络情况动态选择最佳的路线。</p>
+<h2 id="网络性能指标"><a href="#网络性能指标" class="headerlink" title="网络性能指标"></a>网络性能指标</h2><p>比特、字节</p>
+<p>带宽：表示网络传输数据速率的能力。网络一点到达另一点所能通过数据的最高速率。</p>
+<p>吞吐量：每秒内能处理的数据量</p>
+<p>总时延：数据经理的总时延就是发送时延、传输时延、处理时延、队列时延之和。</p>
+<p>丢包率 ：表示网络质量。</p>
+<p>抖动：报文传递时延发生的变化。</p>
+<p>新建：即新建链接速率。每一秒内能处理的TCP链接个数。分4层新建TCP速率和7层HTTP新建速率。</p>
+<p>并发：即并发连接数。同时处理的连接会话个数。也分为4层并发和7层并发。</p>
+<h2 id="网络性能测试工具"><a href="#网络性能测试工具" class="headerlink" title="网络性能测试工具"></a>网络性能测试工具</h2><p>Netperf：测试简单的场景，只能测试TCP、UDP两种场景。</p>
+<p>RFC2544： 提供了一系列基准指标用于测试，还制定了测试场景以及测试的配置。</p>
+<h2 id="网络排障工具"><a href="#网络排障工具" class="headerlink" title="网络排障工具"></a>网络排障工具</h2><p>ifconfig        可以查看MAC地址、网口IP、子网掩码、MTU大小、收发包情况</p>
+<p>ip                  功能更强大，可以实现ifconfig所有功能</p>
+<p>ethtool         用于显示以及修改关于<strong>网卡和设备驱动配置的工具</strong></p>
+<p>ping</p>
+<p>tracert         检测每一跳的状态</p>
+<p>tcpdump     通常用于用户拦截和显示发送或收到过网络连接到该计算机的TCP/IP和其他数据包</p>
+<p>wireshark    类似tcpdump，抓包、检测网络故障</p>
+<p>netflow        基于流的流量分析技术、容易出现观察者效应。观察者本身造成的性能损耗。</p>
+<p>ipfix              IP流信息导出协议、原理和架构与netflow无区别</p>
 
       
     </div>
@@ -611,10 +651,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/02/玉米种植/" rel="prev" title="玉米种植">
-                玉米种植 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -687,7 +723,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -798,7 +834,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#域名解析系统DNS-Domain-Name-System"><span class="nav-number">1.</span> <span class="nav-text">域名解析系统DNS: Domain Name System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP连接：Transmission-Control-Protocol"><span class="nav-number">2.</span> <span class="nav-text">TCP连接：Transmission Control Protocol</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-拥塞控制算法："><span class="nav-number">2.0.0.1.</span> <span class="nav-text">TCP 拥塞控制算法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP流量控制"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">TCP流量控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-与-UDP-的区别："><span class="nav-number">2.0.0.3.</span> <span class="nav-text">TCP 与 UDP 的区别：</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-HTTPS-Hyper-Text-Transfer-Protocol"><span class="nav-number">3.</span> <span class="nav-text">HTTP/HTTPS: Hyper Text Transfer Protocol</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">3.0.0.1.</span> <span class="nav-text"> </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ARP-地址解析协议-：Adress-Resolution-Protocol"><span class="nav-number">4.</span> <span class="nav-text">ARP ( 地址解析协议 )：Adress Resolution Protocol</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ICMP（互联网控制消息协议）：Internet-Control-Message-Protocol"><span class="nav-number">5.</span> <span class="nav-text">ICMP（互联网控制消息协议）：Internet Control Message Protocol</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DHCP-（动态主机设置协议）"><span class="nav-number">6.</span> <span class="nav-text">DHCP （动态主机设置协议）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NAT-（地址转换协议）"><span class="nav-number">7.</span> <span class="nav-text">NAT （地址转换协议）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OSPF-（开放式最短路径优先）"><span class="nav-number">8.</span> <span class="nav-text">OSPF （开放式最短路径优先）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RIP-（路由信息协议）"><span class="nav-number">9.</span> <span class="nav-text">RIP （路由信息协议）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BGP-（边界网关协议）"><span class="nav-number">10.</span> <span class="nav-text">BGP （边界网关协议）</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#IPv4"><span class="nav-number">1.</span> <span class="nav-text">IPv4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#路由与交换"><span class="nav-number">2.</span> <span class="nav-text">路由与交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IPv6、天窗问题"><span class="nav-number">3.</span> <span class="nav-text">IPv6、天窗问题</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#域名解析系统DNS-Domain-Name-System"><span class="nav-number"></span> <span class="nav-text">域名解析系统DNS: Domain Name System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP连接：Transmission-Control-Protocol"><span class="nav-number"></span> <span class="nav-text">TCP连接：Transmission Control Protocol</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-拥塞控制算法："><span class="nav-number">1.</span> <span class="nav-text">TCP 拥塞控制算法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP流量控制"><span class="nav-number">2.</span> <span class="nav-text">TCP流量控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-与-UDP-的区别："><span class="nav-number">3.</span> <span class="nav-text">TCP 与 UDP 的区别：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-HTTPS-Hyper-Text-Transfer-Protocol"><span class="nav-number"></span> <span class="nav-text">HTTP/HTTPS: Hyper Text Transfer Protocol</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#null"><span class="nav-number">1.</span> <span class="nav-text"> </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ARP-地址解析协议-：Adress-Resolution-Protocol"><span class="nav-number"></span> <span class="nav-text">ARP ( 地址解析协议 )：Adress Resolution Protocol</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ICMP（互联网控制消息协议）：Internet-Control-Message-Protocol"><span class="nav-number"></span> <span class="nav-text">ICMP（互联网控制消息协议）：Internet Control Message Protocol</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DHCP-（动态主机设置协议）"><span class="nav-number"></span> <span class="nav-text">DHCP （动态主机设置协议）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NAT-（地址转换协议）"><span class="nav-number"></span> <span class="nav-text">NAT （地址转换协议）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OSPF-（开放式最短路径优先）"><span class="nav-number"></span> <span class="nav-text">OSPF （开放式最短路径优先）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RIP-（路由信息协议）"><span class="nav-number"></span> <span class="nav-text">RIP （路由信息协议）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BGP-（边界网关协议）"><span class="nav-number"></span> <span class="nav-text">BGP （边界网关协议）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络性能指标"><span class="nav-number"></span> <span class="nav-text">网络性能指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络性能测试工具"><span class="nav-number"></span> <span class="nav-text">网络性能测试工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络排障工具"><span class="nav-number"></span> <span class="nav-text">网络排障工具</span></a></li></ol></li></div>
             
 
           </div>
@@ -846,7 +882,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共 22.8k 字</span>
+  <span class="post-count">全站共 22.7k 字</span>
 </div>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
