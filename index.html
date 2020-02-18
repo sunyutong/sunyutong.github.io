@@ -371,7 +371,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-02-13 09:58:38" itemprop="dateModified" datetime="2020-02-13T09:58:38+08:00">2020-02-13</time>
+                <time title="Modified: 2020-02-18 15:18:14" itemprop="dateModified" datetime="2020-02-18T15:18:14+08:00">2020-02-18</time>
               
             
           </span>
@@ -437,20 +437,7 @@
 
       
         
-          <p>TCP/IP 与 OSI 协议模型</p>
-<p>TCP/IP 中各层对应的协议</p>
-<p>MAC 地址： 长度为48位（6字节），通常为12个16进制数。前6位为网络硬件制造商的编号，后六位为制造商所制造的网络产品或网卡的系列号</p>
-<h4 id="IPv4"><a href="#IPv4" class="headerlink" title="IPv4"></a>IPv4</h4><p>私有IP地址 - 不出现在公网中</p>
-<p>10.0.0.0 - 10.255.255.255</p>
-<p>172.16.0.0 - 172.31.255.255</p>
-<p>192.168.0.0 - 192.168.255.255</p>
-<p>保留IP地址：</p>
-<p>169.254.0.0 - 169.254.255.255</p>
-<p>计算机无法通过DHCP获取IP地址时，使用临时保留IP地址</p>
-<h4 id="路由与交换"><a href="#路由与交换" class="headerlink" title="路由与交换"></a>路由与交换</h4><p>缺省路由</p>
-<p>策略路由</p>
-<p>ACL</p>
-<h4 id="IPv6、天窗问题"><a href="#IPv6、天窗问题" class="headerlink" title="IPv6、天窗问题"></a>IPv6、天窗问题</h4><h1 id="域名解析系统DNS-Domain-Name-System"><a href="#域名解析系统DNS-Domain-Name-System" class="headerlink" title="域名解析系统DNS: Domain Name System"></a>域名解析系统DNS: Domain Name System</h1><p>DNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是<strong>应用层协议</strong>。当用户在浏览器地址栏输入URL之后，首先在<strong>浏览器查询缓存</strong>，查询不到则在<strong>host文件</strong>和本地DNS查询。如果以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程<strong>DNS服务器</strong>发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dns server + url 可以验证DNS的缓存机制）</p>
+          <h1 id="域名解析系统DNS-Domain-Name-System"><a href="#域名解析系统DNS-Domain-Name-System" class="headerlink" title="域名解析系统DNS: Domain Name System"></a>域名解析系统DNS: Domain Name System</h1><p>DNS查询报文以UDP形式发出，服务器的默认端口是53，DNS是<strong>应用层协议</strong>。当用户在浏览器地址栏输入URL之后，首先在<strong>浏览器查询缓存</strong>，查询不到则在<strong>host文件</strong>和本地DNS查询。如果以上客户端DNS缓存中均未发现，则进入ISP DNS缓存中查询，最后向远程<strong>DNS服务器</strong>发出DNS查询报文。（通过抓包可以查看DNS的数据包结构或通过dig @dns server + url 可以验证DNS的缓存机制）</p>
 <p>另外DNS也支持TCP访问，为了减轻单台DNS服务器的负载，一台服务器中的内容会传输到其他服务器中进行备份或分布式存储。这是DNS的区域传输就使用TCP进行。</p>
           <!--noindex-->
           
@@ -2436,7 +2423,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共 22.7k 字</span>
+  <span class="post-count">全站共 22.6k 字</span>
 </div>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
